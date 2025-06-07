@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HULUL - Panel de Administración</title>
+  <link href="./css/styles.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <a href="#" class="sidebar-brand">
+        <i class="fas fa-crown"></i> HULUL
+      </a>
+    </div>
+    <ul class="sidebar-nav nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html" onclick="showSection('dashboard')">
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="reservas.html" onclick="showSection('reservas')">
+          <i class="fas fa-calendar-check"></i> Gestión de Reservas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="palcos_mesas.html" onclick="showSection('inventario')">
+          <i class="fas fa-warehouse"></i> Palcos y Mesas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="eventos.html" onclick="showSection('eventos')">
+          <i class="fas fa-star"></i> Eventos
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="usuarios.html" onclick="showSection('usuarios')">
+          <i class="fas fa-users"></i> Usuarios Registrados
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="reportes.html" onclick="showSection('reportes')">
+          <i class="fas fa-chart-line"></i> Reportes Financieros
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div id="dashboard" class="section active">
+      <div class="admin-profile animate__animated animate__fadeInDown">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./img/cassiani.jfif" alt="Admin" class="profile-avatar" />
+          </div>
+          <div class="col mb-5">
+            <h2 class="mb-1">Bienvenido, Cristian Cassiani</h2>
+            <p class="mb-2">Administrador General - HULUL</p>
+            <small><i class="fas fa-calendar"></i> Último acceso: Hoy, 10:30 AM</small>
+          </div>
+          <br />
+          <div class="col-auto">
+            <button class="btn btn-primary btn-modern">
+              <a class="nav-link" href="perfil.html">
+                <i class="fas fa-cog"></i> Configuración
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="stats-card animate__animated animate__fadeInUp">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="stats-number" id="totalReservas">0</h3>
+                <p class="text-muted mb-0">Reservas Activas</p>
+              </div>
+              <div class="text-warning fs-1">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="stats-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="stats-number" id="ingresosMes">$0</h3>
+                <p class="text-muted mb-0">Ingresos del Mes</p>
+              </div>
+              <div class="text-success fs-1">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="stats-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="stats-number" id="ocupacionPalcos">0%</h3>
+                <p class="text-muted mb-0">Ocupación Palcos VIP</p>
+              </div>
+              <div class="text-info fs-1">
+                <i class="fas fa-theater-masks"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="stats-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="stats-number" id="ocupacionMesas">0%</h3>
+                <p class="text-muted mb-0">Ocupación Mesas Premium</p>
+              </div>
+              <div class="text-primary fs-1">
+                <i class="fas fa-table"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    async function actualizarDashboard() {
+      try {
+        const response = await fetch('./php/get_dashboard_stats.php');
+        if (!response.ok) throw new Error('Error al obtener datos del dashboard');
+        const data = await response.json();
+
+        document.getElementById('totalReservas').textContent = data.totalReservas ?? 0;
+        document.getElementById('ingresosMes').textContent = new Intl.NumberFormat('es-CO', {
+          style: 'currency',
+          currency: 'COP',
+        }).format(data.ingresosMes ?? 0);
+        document.getElementById('ocupacionPalcos').textContent = (data.ocupacionPalcos ?? 0) + '%';
+        document.getElementById('ocupacionMesas').textContent = (data.ocupacionMesas ?? 0) + '%';
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      actualizarDashboard();
+      setInterval(actualizarDashboard, 60000);
+    });
+
+    function showSection(section) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((s) => s.classList.remove('active'));
+      document.getElementById(section).classList.add('active');
+    }
+  </script>
+</body>
+</html>

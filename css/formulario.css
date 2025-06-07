@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8D8D8; /* Fondo ligeramente gris para resaltar el formulario */
+}
+
+form {
+    padding: 59px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 340px;
+    background-color: #f7f7f7; /* Fondo claro para el formulario */
+    transition: transform 0.3s ease-in-out; /* Animación para hover */
+}
+
+form:hover {
+    transform: scale(1.02); /* Efecto de escala al pasar el mouse sobre el formulario */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+h2 {
+    color: gold;
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+label {
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 14px 25px;
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+    background-color: rgb(236, 232, 226);
+    margin-bottom: 20px;
+    color: black;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: rgb(87, 84, 84);
+}
+
+input:focus {
+    border-color: #FFA725; /* Cambio de borde al hacer foco */
+    box-shadow: 0 0 5px rgba(255, 167, 37, 0.6); /* Sombra al hacer foco */
+}
+
+.form-txt {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.form-txt a {
+    color: goldenrod;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.form-txt a:hover {
+    color: #FFA725; /* Cambio de color en hover */
+}
+
+/* Botón con estilo */
+.group-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 0;
+    background-color: #FFA725;
+    color: white;
+    box-shadow: 0 0 20px rgba(41, 38, 38, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    width: 100%; /* Hacer el botón de ancho completo */
+}
+
+.btn:hover {
+    background-color: #e69500; /* Cambio de color en hover */
+    transform: scale(1.05); /* Efecto de escala */
+    border-radius: 20px;
+}
+
+/* Animación de entrada al formulario */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    animation: fadeInUp 0.8s ease-out; /* Aplicamos la animación de entrada */
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 40px 30px;
+        margin: 20px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .input-group-half {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin: 5px;
+        padding: 8px;
+    }
+
+    input {
+        padding: 12px 15px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 20px;
+        margin-bottom: 15px;
+    }
+
+    .form-txt {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .animation-container {
+        width: 90%;
+    }
+
+    body {
+        padding: 10px;
+    }
+}

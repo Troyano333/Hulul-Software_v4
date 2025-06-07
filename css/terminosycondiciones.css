@@ -1,0 +1,125 @@
+         /* Estilos Mejorados para Términos y Condiciones (mueve a tu archivo CSS) */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
+
+        .terms-header {
+             background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%); /* Un gradiente oscuro diferente */
+            color: #FFA725;
+            padding: 3rem 1.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .terms-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .terms-header h1 .bi {
+            font-size: 2.6rem;
+            margin-right: 0.75rem;
+            vertical-align: middle;
+        }
+        .terms-header p.lead {
+            font-size: 1.15rem;
+            color: #e0e0e0;
+            margin-bottom: 0;
+        }
+
+        .terms-container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.07);
+        }
+
+        .terms-container h2 {
+            color: #FFA725;
+            font-weight: 600;
+            font-size: 1.6rem; /* Ligeramente más pequeño que en FAQ para diferenciar */
+            margin-top: 2.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffe0b3; /* Naranja más claro para la línea */
+        }
+        .terms-container h2:first-of-type {
+            margin-top: 0;
+        }
+        .terms-container h2 .bi { /* Iconos opcionales para H2 */
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .terms-container p,
+        .terms-container ul li {
+            color: #515151;
+            font-size: 0.95rem; /* Ligeramente más pequeño para textos largos */
+            line-height: 1.7;
+            margin-bottom: 0.85rem;
+        }
+
+        .terms-container ul {
+            padding-left: 1.5rem;
+        }
+        .terms-container ul li::marker {
+            color: #FFA725;
+        }
+
+        .terms-container strong {
+            color: #343a40;
+        }
+         .terms-container a:not(.btn-back-custom) { /* Enlaces dentro del texto de términos */
+            color: #e68900;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .terms-container a:not(.btn-back-custom):hover {
+            color: #FFA725;
+        }
+        
+        .btn-back-custom {
+            display: inline-block;
+            font-weight: 700;
+            color: black; 
+            background-color: #FFA725; 
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid #e68900; 
+            padding: 0.8rem 2rem; 
+            font-size: 1rem;
+            text-transform: uppercase; 
+            border-radius: 50px; 
+            text-decoration: none;
+            transition: all 0.25s ease-in-out; 
+            box-shadow: 0 4px 10px rgba(255, 167, 37, 0.3); 
+        }
+        .btn-back-custom:hover, .btn-back-custom:focus {
+            color: white; 
+            background-color: gold; 
+            border-color: #e6b800; 
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: 0 7px 18px rgba(218, 165, 32, 0.45); 
+        }
+        .btn-back-custom .bi { 
+            margin-right: 0.6rem;
+            font-size: 1.1rem;
+            vertical-align: -0.15em; 
+        }
+
+        @media (min-width: 992px) {
+            .terms-container {
+                max-width: 860px; /* Un poco más ancho para textos legales */
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+   

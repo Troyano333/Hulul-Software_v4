@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HULUL - Usuarios Registrados</title>
+    <link href="./css/usuarios.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <i class="fas fa-crown"></i> HULUL
+            </a>
+        </div>
+        <ul class="sidebar-nav nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" onclick="showSection('dashboard')">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reservas.html" onclick="showSection('reservas')">
+                    <i class="fas fa-calendar-check"></i> Gestión de Reservas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="palcos_mesas.html" onclick="showSection('inventario')">
+                    <i class="fas fa-warehouse"></i> Palcos y Mesas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="eventos.html" onclick="showSection('eventos')">
+                    <i class="fas fa-star"></i> Eventos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="usuarios.html" onclick="showSection('usuarios')">
+                    <i class="fas fa-users"></i> Usuarios Registrados
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reportes.html" onclick="showSection('reportes')">
+                    <i class="fas fa-chart-line"></i> Reportes Financieros
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content p-4">
+        <div id="usuarios" class="section active">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="chart-title">Usuarios Registrados</h2>
+            </div>
+
+            <!-- Tabla de Usuarios -->
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Cédula</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Correo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usuariosTable">
+                            <!-- Los usuarios se cargarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+ <script src="Js/usuarios.js"></script>
+</body>
+</html>

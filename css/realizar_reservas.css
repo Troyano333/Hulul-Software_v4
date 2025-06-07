@@ -1,0 +1,538 @@
+/* Estilos generales del formulario de reservas */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(177, 156, 156);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Mejor manejo de padding y border */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit; /* Heredar box-sizing */
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 36px;
+  color: #333;
+}
+
+.reser-h1 {
+  color: #ff9900;
+}
+
+.resrvas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px; /* Limitar ancho máximo en pantallas grandes */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3D Cube Carousel Styles */
+.carousel-3d-container {
+  flex: 1;
+  min-width: 300px; /* Asegurar un tamaño mínimo */
+  max-width: 500px;
+  height: 400px;
+  position: relative;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-3d-scene {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate3D 12s infinite linear;
+}
+
+.carousel-3d-item {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ff9900;
+}
+
+.carousel-3d-item:nth-child(1) {
+  transform: rotateY(0deg) translateZ(150px);
+}
+
+.carousel-3d-item:nth-child(2) {
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+.carousel-3d-item:nth-child(3) {
+  transform: rotateY(180deg) translateZ(150px);
+}
+
+.carousel-3d-item:nth-child(4) {
+  transform: rotateY(270deg) translateZ(150px);
+}
+
+.carousel-3d-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.carousel-3d-item:hover img {
+  transform: scale(1.1);
+}
+
+.carousel-3d-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 20px 15px 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-3d-caption h5 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #ff9900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-3d-caption p {
+  font-size: 14px;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes rotate3D {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Formulario a la derecha */
+.content-formulario {
+  flex: 1;
+  min-width: 300px; /* Asegurar un tamaño mínimo */
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 40px; /* Ajustado padding base */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Inputs lado a lado */
+.input-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan si no caben */
+  margin-bottom: 15px; /* Espacio entre filas de inputs */
+}
+
+.input-row:last-child {
+    margin-bottom: 0; /* Quitar margen inferior a la última fila */
+}
+
+.input-row > div { /* Contenedor de label + input dentro de input-row */
+  flex: 1 1 calc(50% - 10px); /* Cada div ocupa ~50% menos la mitad del gap */
+  min-width: 150px; /* Evitar que los campos se encojan demasiado */
+}
+
+/* Estilo de inputs y selects */
+input,
+select {
+  width: 100%; /* Por defecto, los inputs y selects ocupan el 100% de su contenedor */
+  padding: 12px 16px;
+  margin-top: 8px; /* Espacio entre label e input */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Inputs y selects que no están en una fila de dos (ocuparán todo el ancho del formulario) */
+input:focus,
+select:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 8px rgba(255, 153, 0, 0.4);
+  outline: none;
+}
+
+label {
+  margin-top: 18px; /* Espacio encima de cada label (si es el primer elemento del grupo) */
+  display: block;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px; /* Ajuste ligero del tamaño de la etiqueta */
+}
+
+/* Botón */
+button {
+  background-color: #ff9900;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 30px; /* Más espacio antes del botón */
+}
+
+button:hover {
+  background-color: #e68a00;
+}
+
+/* Pause animation on hover */
+.carousel-3d-container:hover .carousel-3d-scene {
+  animation-play-state: paused;
+}
+
+/* CSS para el título "realizar reservas" */
+h1 { /* Estilos del título principal */
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 42px; /* Ajustado tamaño base */
+  font-weight: 800;
+  background: linear-gradient(45deg, #ff9900, #ffdd00, #ff6b35, #ff9900);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Animación del gradiente de colores */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Estilo específico para la palabra "reservas" */
+.reser-h1 {
+  color: #ff9900; /* Intención original */
+}
+
+
+/* === Responsive para móviles y tablets (hasta 768px) === */
+@media (max-width: 768px) {
+  .resrvas {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Reducir gap entre carousel y formulario */
+    padding: 15px;
+  }
+
+  .carousel-3d-container {
+    max-width: 90%;
+    height: 300px;
+  }
+
+  .carousel-3d-scene {
+    width: 250px;
+    height: 250px;
+  }
+
+  .carousel-3d-item {
+    width: 250px;
+    height: 250px;
+  }
+
+  .carousel-3d-caption h5 {
+    font-size: 16px;
+  }
+
+  .carousel-3d-caption p {
+    font-size: 13px;
+  }
+
+  .content-formulario {
+    width: 100%;
+    max-width: 100%; /* Ocupar el ancho disponible dentro del padding de .resrvas */
+    padding: 25px;
+    margin-top: 0; /* El gap de .resrvas ya da espacio */
+  }
+
+  /* Ajustar inputs lado a lado en móvil a columna */
+  .input-row {
+    flex-direction: column;
+    gap: 0; /* Sin gap horizontal, el vertical se maneja con margin-bottom en > div */
+    margin-bottom: 0; /* El margin-bottom se aplicará a los > div individuales */
+  }
+
+  .input-row > div {
+    width: 100%;
+    margin-bottom: 15px; /* Espacio vertical entre campos apilados */
+  }
+
+  .input-row > div:last-child {
+    margin-bottom: 0; /* Quitar margen del último campo en un grupo */
+  }
+
+  label {
+    margin-top: 0; /* El espaciado lo da el margin-bottom del .input-row > div */
+    font-size: 14px;
+  }
+
+  input, select {
+      margin-top: 6px; /* Reducir un poco el espacio entre label e input */
+  }
+
+  h1 {
+    font-size: 28px; /* Título más pequeño en móviles */
+    margin: 25px 0 15px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+
+  .products-grid { /* Regla preexistente para este media query */
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Tabletas en landscape y pantallas pequeñas de escritorio (opcional) === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resrvas {
+    gap: 30px;
+    padding: 15px;
+  }
+  .content-formulario {
+    padding: 30px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .carousel-3d-container {
+    height: 350px; /* Ajustar si es necesario */
+  }
+  .carousel-3d-scene, .carousel-3d-item {
+    width: 280px; /* Ajustar si es necesario */
+    height: 280px;
+  }
+}
+  /* Estilos Adicionales y Mejoras (mueve a realizar_reservas.css o tu CSS principal) */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFF5E4; /* Color de fondo de .contenedor en index.html */
+            color: #333;
+            padding-top: 0;
+            padding-bottom: 3rem;
+        }
+
+        .reservas-page-header {
+            background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%); /* Gradiente naranja */
+            color: #ffffff;
+            padding: 3rem 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .reservas-page-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .reservas-page-header h1 .bi {
+            font-size: 2.6rem;
+            margin-right: 0.75rem;
+            vertical-align: -0.1em;
+        }
+        .reservas-page-header p.lead {
+            font-size: 1.15rem;
+            color: #f0f0f0;
+            margin-bottom: 0;
+            font-weight: 300;
+        }
+        
+        /* Título principal del formulario (manteniendo tu animación de gradiente) */
+        .form-title-animated { 
+            text-align: center;
+            margin: 0 0 2rem; /* Ajustado margen */
+            font-size: 2.5rem; /* Tamaño ajustado */
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff9900, #ffdd00, #ff6b35, #ff9900);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite alternate; /* 'alternate' para un efecto más suave */
+            text-shadow: 0 2px 8px rgba(255, 153, 0, 0.2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .form-title-animated .reser-h1 { /* Para la parte coloreada del título */
+             -webkit-text-fill-color: #ff9900; /* Para que se vea el color si el gradiente no es soportado */
+             /* No necesita el background-clip si el padre ya lo tiene */
+        }
+
+        @keyframes gradientShift { /* Tu animación de gradiente */
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Contenedor principal de la sección de reservas */
+        .reservas-section-wrapper { /* Reemplaza tu clase .resrvas */
+            padding: 1.5rem; /* Padding reducido para que no haya tanto espacio muerto */
+        }
+
+        /* Contenedor del Carrusel 3D */
+        .carousel-showcase { /* Nuevo contenedor para el carrusel */
+            background-color: #ffffff; /* Fondo blanco */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center; /* Centrar el carrusel verticalmente si es más pequeño que el form */
+            justify-content: center;
+            min-height: 450px; /* Altura mínima para el contenedor del carrusel */
+        }
+        /* Tus estilos para .carousel-3d-container y sus hijos de realizar_reservas.css deberían seguir funcionando */
+        /* Asegúrate que el carrusel se vea bien dentro de este nuevo contenedor */
+        .carousel-3d-container {
+            flex: 0 0 auto; /* Para que no intente crecer más de su tamaño definido */
+        }
+
+
+        /* Contenedor del Formulario */
+        .form-reservas-container { /* Reemplaza tu .content-formulario */
+            background-color: #ffffff;
+            padding: 2.5rem; /* Más padding para el formulario */
+            border-radius: 0.75rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.07);
+        }
+
+        .form-reservas-container .form-label { /* Estilo para labels */
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.3rem; /* Menos espacio debajo del label */
+            font-size: 0.9rem;
+        }
+        .form-reservas-container .form-control,
+        .form-reservas-container .form-select { /* Estilo para inputs y selects */
+            border-radius: 0.375rem; 
+            border: 1px solid #ced4da;
+            padding: 0.75rem 1rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            background-color: #f8f9fa; /* Fondo claro para inputs */
+            font-size: 1rem;
+        }
+        .form-reservas-container .form-control:focus,
+        .form-reservas-container .form-select:focus {
+            border-color: #FFA725;
+            box-shadow: 0 0 0 0.25rem rgba(255, 167, 37, 0.35);
+            background-color: #fff; /* Fondo blanco al hacer foco */
+        }
+        .form-reservas-container .form-control[readonly] { /* Inputs de solo lectura */
+            background-color: #e9ecef; /* Un gris más claro */
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+
+        /* Estructura de filas de inputs */
+        .form-reservas-container .input-row {
+            display: flex;
+            flex-wrap: wrap; /* Para que se apilen en móvil */
+            gap: 1.5rem; /* Espacio entre grupos de input en la misma fila */
+            margin-bottom: 1.25rem;
+        }
+        .form-reservas-container .input-row > div { /* Cada grupo de label+input */
+            flex: 1 1 calc(50% - 0.75rem); /* Para dos columnas, ajustando por el gap */
+            min-width: 200px; /* Ancho mínimo para cada campo */
+        }
+         /* Para campos que deben ocupar toda la fila */
+        .form-reservas-container .input-row > div.full-width-field {
+            flex-basis: 100%;
+        }
+
+
+        .btn-reservar-custom { /* Botón de Reservar */
+            background-color: #FFA725;
+            color: black;
+            font-weight: 700;
+            padding: 0.85rem 2.5rem; /* Botón más grande */
+            border-radius: 50px;
+            border: 1px solid #e68900;
+            transition: all 0.25s ease-in-out;
+            text-transform: uppercase;
+            width: 100%; /* Botón de ancho completo */
+            margin-top: 1.5rem; /* Espacio antes del botón */
+            font-size: 1.1rem;
+        }
+        .btn-reservar-custom:hover {
+            background-color: gold;
+            color: white;
+            border-color: #e6b800;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+        }
+        .btn-reservar-custom .bi {
+            margin-right: 0.5rem;
+        }
+
+        .btn-back-custom {
+            display: inline-block; font-weight: 700; color: black; background-color: #FFA725; 
+            text-align: center; vertical-align: middle; cursor: pointer; border: 1px solid #e68900; 
+            padding: 0.8rem 2rem; font-size: 1rem; text-transform: uppercase; 
+            border-radius: 50px; text-decoration: none; transition: all 0.25s ease-in-out; 
+            box-shadow: 0 4px 10px rgba(255, 167, 37, 0.3); 
+        }
+        .btn-back-custom:hover, .btn-back-custom:focus {
+            color: white; background-color: gold; border-color: #e6b800; 
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: 0 7px 18px rgba(218, 165, 32, 0.45); 
+        }
+        .btn-back-custom .bi { 
+            margin-right: 0.6rem; font-size: 1.1rem; vertical-align: -0.15em; 
+        }
+        
+        /* Ajustes responsivos específicos para esta página */
+        @media (max-width: 991px) { /* Tablets */
+            .carousel-showcase {
+                margin-bottom: 2rem;
+                min-height: auto; /* Permitir que el carrusel defina su altura */
+            }
+            .form-reservas-container .input-row > div {
+                flex-basis: 100%; /* Campos en una sola columna en tablets */
+            }
+        }
+        @media (max-width: 767px) { /* Móviles */
+            .reservas-page-header { padding: 2rem 1rem; margin-bottom: 1.5rem; }
+            .reservas-page-header h1 { font-size: 2.2rem; }
+            .reservas-page-header p.lead { font-size: 1rem; }
+            .reservas-section-wrapper { padding: 1rem; }
+            .form-title-animated { font-size: 2rem; }
+            .carousel-showcase, .form-reservas-container { padding: 1.5rem; }
+            .btn-reservar-custom { padding: 0.75rem 1.5rem; font-size: 1rem; }
+        }

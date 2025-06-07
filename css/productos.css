@@ -1,0 +1,236 @@
+/* Estilos Adicionales y Mejoras */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Fondo general suave y consistente */
+    padding-bottom: 3rem;
+}
+
+.products-header {
+    background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%);
+    color: #FFA725;
+    padding: 3rem 1.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.products-header h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.products-header h1 .bi {
+    font-size: 2.6rem;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+}
+
+.products-header p.lead {
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+
+/* Título de la cadena de licores */
+.titulo-cadena-licores {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Contenedor para la sección del carrusel para destacarlo */
+.carousel-showcase-container {
+    background-color: #ffffff; /* Fondo blanco para destacar el carrusel */
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05); /* Sombra más sutil */
+    margin-bottom: 2.5rem;
+}
+
+#productsCarousel .carousel-item img {
+    max-height: 400px; /* Limitar la altura máxima para mantener la proporción */
+    width: 100%; /* Hacer que la imagen ocupe todo el ancho disponible */
+    object-fit: contain; /* Mantener la imagen en su proporción original sin recortes */
+    border-radius: 0.75rem; /* Bordes redondeados para las imágenes */
+}
+
+/* Estilos para los controles del carrusel */
+#productsCarousel .carousel-control-prev-icon,
+#productsCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para los iconos */
+    border-radius: 50%;
+    padding: 0.5rem; /* Un poco de padding alrededor del icono */
+}
+
+/* Estilos para la categoría de productos */
+.product-category {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.07);
+    margin-bottom: 2.5rem;
+}
+
+.product-category h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #FFA725;
+    border-bottom: 2px solid #ffe0b3;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.product-category h2 .bi {
+    margin-right: 0.5rem;
+}
+
+
+
+
+/* Estilo de conclusión */
+.conclusion-text {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #7e537a;
+    border-radius: 0.5rem;
+}
+
+.conclusion-text h4 {
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.conclusion-text p {
+    color: #515151;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+        /* Estilos para las tarjetas de producto - Puedes moverlos a productos.css */
+        .product-category-title {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #E67E22; /* Usando un color similar al de .licor span */
+            color: #343a40; /* Color oscuro para el título */
+            font-weight: bold;
+        }
+
+        .product-card {
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem; /* Bordes redondeados consistentes */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            height: 100%; /* Para que todas las tarjetas en una fila tengan la misma altura */
+            background-color: #fff; /* Fondo blanco para las tarjetas */
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card .card-img-top {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            object-fit: cover;
+            height: 200px; /* Altura fija para la imagen, ajusta según necesidad */
+            width: 100%;
+        }
+
+        .product-card .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem; /* Espaciado interno */
+        }
+
+        .product-card .card-title {
+            font-size: 1.1rem;
+            font-weight: 600; /* Semi-bold */
+            color: #495057; /* Color de texto principal */
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .card-text.price {
+            font-size: 1.2rem;
+            color: #E67E22; /* Color de acento para el precio */
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        /* Estilos existentes que podrías tener en productos.css (ejemplos) */
+        .products-header {
+            background-color: #333; /* Ejemplo, ajusta a tu diseño */
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .products-header h1 {
+            font-size: 2.8rem;
+        }
+        .products-header .lead {
+            font-size: 1.2rem;
+        }
+        .carousel-showcase-container {
+            margin-bottom: 3rem;
+        }
+        .titulo-cadena-licores {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .titulo-cadena-licores .licor {
+            color: #E67E22; /* Color de acento */
+        }
+        .carousel-item img {
+            max-height: 500px; /* Ajusta la altura máxima del carrusel */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .conclusion-text {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: #f8f9fa; /* Fondo claro para la conclusión */
+            border-radius: 8px;
+            text-align: center;
+        }
+        .conclusion-text h4 {
+            color: #333;
+            font-size: 1.5rem;
+        }
+        .conclusion-text .licor {
+            color: #E67E22;
+        }
+        .btn-back-custom {
+            background-color: #E67E22; /* Color de acento para el botón */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px; /* Botón más redondeado */
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-back-custom:hover {
+            background-color: #d35400; /* Color más oscuro al pasar el mouse */
+            color: white;
+        }
+   

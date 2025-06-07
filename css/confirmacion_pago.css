@@ -1,0 +1,136 @@
+
+        /* Estilos Adicionales y Mejoras (mueve a confirmacion_pago.css o tu CSS principal) */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f5f7; /* Fondo gris claro suave */
+            color: #333;
+            padding-top: 0;
+            padding-bottom: 3rem;
+        }
+
+        .confirmation-page-header {
+            background: linear-gradient(135deg, #28a745 0%, #218838 100%); /* Gradiente verde para éxito */
+            color: #ffffff;
+            padding: 3rem 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .confirmation-page-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .confirmation-page-header h1 .bi {
+            font-size: 2.6rem;
+            margin-right: 0.75rem;
+            vertical-align: -0.1em;
+        }
+        .confirmation-page-header p.lead {
+            font-size: 1.15rem;
+            color: #e0e0e0; /* Texto más claro sobre fondo oscuro */
+            margin-bottom: 0;
+            font-weight: 300;
+        }
+
+        .confirmation-main-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.07);
+        }
+        
+        .info-block { /* Clase común para los bloques de información */
+            background-color: #fff9f0; /* Naranja muy pálido, casi crema */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ffe0b3; /* Borde naranja claro */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .info-block h2 {
+            color: #FFA725; /* Color naranja principal */
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #FFA725;
+        }
+        .info-block h2 .bi {
+            margin-right: 0.5rem;
+        }
+        .info-block p {
+            font-size: 0.95rem;
+            color: #515151;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .info-block p strong {
+            color: #333;
+        }
+
+        .qr-code-block { /* Estilo específico para el bloque del QR */
+            text-align: center;
+        }
+        .qr-code-block img#qr_imagen { /* ID de tu imagen QR */
+            max-width: 220px; /* Tamaño del QR ajustado */
+            height: auto;
+            border: 5px solid #FFA725; /* Borde naranja alrededor del QR */
+            border-radius: 0.5rem;
+            padding: 5px; /* Espacio entre el borde y el QR */
+            background-color: white; /* Fondo blanco para el QR */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 1rem;
+        }
+        .qr-code-block .qr-instruction {
+            font-size: 0.9rem;
+            color: #e68900; /* Naranja más oscuro */
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        
+        .discoteca-info-block .contact-details-list {
+            list-style: none;
+            padding-left: 0;
+        }
+         .discoteca-info-block .contact-details-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+         .discoteca-info-block .contact-details-list .bi {
+            color: #FFA725;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+
+        .btn-back-custom {
+            display: inline-block; font-weight: 700; color: black; background-color: #FFA725; 
+            text-align: center; vertical-align: middle; cursor: pointer; border: 1px solid #e68900; 
+            padding: 0.8rem 2rem; font-size: 1rem; text-transform: uppercase; 
+            border-radius: 50px; text-decoration: none; transition: all 0.25s ease-in-out; 
+            box-shadow: 0 4px 10px rgba(255, 167, 37, 0.3); 
+        }
+        .btn-back-custom:hover, .btn-back-custom:focus {
+            color: white; background-color: gold; border-color: #e6b800; 
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: 0 7px 18px rgba(218, 165, 32, 0.45); 
+        }
+        .btn-back-custom .bi { 
+            margin-right: 0.6rem; font-size: 1.1rem; vertical-align: -0.15em; 
+        }
+        
+        /* Responsividad */
+        @media (max-width: 767px) {
+            .confirmation-page-header { padding: 2rem 1rem; margin-bottom: 1.5rem; }
+            .confirmation-page-header h1 { font-size: 2.2rem; }
+            .confirmation-page-header p.lead { font-size: 1rem; }
+            .confirmation-main-container { padding: 1.5rem; }
+            .info-block { padding: 1rem; }
+            .info-block h2 { font-size: 1.3rem; }
+            .qr-code-block img#qr_imagen { max-width: 180px; }
+        }
+
+  

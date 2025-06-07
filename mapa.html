@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo - Discoteca Hulul</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/mapa.css">
+<link rel="icon" href="./img/h.png" type="image/png" />
+   
+</head>
+
+<body>
+    <div class="map-page-header">
+        <h1><i class="bi bi-pin-map-fill"></i> Mapa Interactivo Hulul</h1>
+        <p class="lead">Selecciona tu palco o mesa ideal y prepárate para una noche inolvidable.</p>
+    </div>
+    <div class="container map-main-container">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 mb-4 mb-lg-0">
+                <div class="map-text-instructions">
+                    <h2>¡Haz tu reserva en <span class="D">Discoteca Hulul!</span></h2>
+                    <hr class="my-3">
+                    <p>
+                        <span class="D-2">Para disfrutar</span> de una experiencia única en Discoteca Hulul, selecciona el Palco o Mesa de tu preferencia en el mapa interactivo. Haz clic en cualquier zona verde disponible para obtener más información y proceder con tu reserva. Las zonas en rojo indican que ya están ocupadas.
+                    </p>
+                    
+                    <h2>¿Cómo hacerlo?</h2>
+                    <p>
+                        <span class="D-1">1. Selecciona la zona:</span> Haz clic en uno de los puntos verdes sobre el mapa que corresponda a la zona que deseas reservar (mesa o palco).
+                        <br><br>
+                        <span class="D-1">2. Confirma tu elección:</span> Al hacer clic, la información de la zona seleccionada se guardará.
+                        <br><br>
+                        <span class="D-1">3. Completa tu reserva:</span> Serás redirigido automáticamente al formulario de reservas donde podrás finalizar tu compra y asegurar tu lugar en la discoteca.
+                    </p>
+
+                    <div class="logo-discoteca">
+                        <img src="./img/h.png" alt="Logo Discoteca Hulul" class="mover"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12">
+                <div class="interactive-map-wrapper">
+                    <h2 class="map-title">Mapa de la Discoteca</h2>
+                    <div class="map-image-container">
+                        <object data="./img/mapa.svg" type="image/svg+xml" class="map-image" aria-label="Mapa interactivo de la discoteca Hulul"></object>
+                        <div class="zone" id="palco-vip" data-zone="Palco VIP" onclick="seleccionarZona('Palco VIP')"></div>
+                        <div class="zone" id="mesa-vip" data-zone="Mesa VIP" onclick="seleccionarZona('Mesa VIP')"></div>
+                        <div class="zone" id="palco-plata" data-zone="Palco Plata" onclick="seleccionarZona('Palco Plata')"></div>
+                        <div class="zone" id="mesa-plata" data-zone="Mesa Plata" onclick="seleccionarZona('Mesa Plata')"></div>
+                        <div class="zone" id="palco-bronce" data-zone="Palco Bronce" onclick="seleccionarZona('Palco Bronce')"></div>
+                        <div class="zone" id="mesa-bronce" data-zone="Mesa Bronce" onclick="seleccionarZona('Mesa Bronce')"></div>
+
+                        <div class="zonerojo" id="vip-rojo" data-zone="Palco Diamante (Ocupado)"></div>
+                        <div class="zonerojo" id="plata-rojo" data-zone="Palco Gold (Ocupado)"></div>
+                        <div class="zonerojo" id="mesavip-rojo" data-zone="Mesa Diamante (Ocupada)"></div>
+                        <div class="zonerojo" id="mesaplata-rojo" data-zone="Mesa Gold (Ocupada)"></div>
+                    </div>
+                    <h3 class="map-subtitle">¡Elige tu lugar y vive la experiencia Hulul!</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn-back-custom"><i class="bi bi-arrow-left-circle-fill"></i> Volver a la Página Principal</a>
+        </div>
+    </div>
+    <script>
+        function seleccionarZona(zona) {
+            console.log("Zona seleccionada:", zona); 
+            localStorage.setItem('zonaSeleccionada', zona);
+            window.location.href = 'formulario_reservas.html';
+        }
+
+        document.querySelectorAll('.zonerojo').forEach(zonaOcupada => {
+            zonaOcupada.addEventListener('click', function() {
+                alert('Esta zona ya se encuentra reservada. Por favor, selecciona otra.');
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

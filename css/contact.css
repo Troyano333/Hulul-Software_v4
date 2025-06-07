@@ -1,0 +1,191 @@
+body {
+    background-color: #FFF5E4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Contenedor de formulario */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    width: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 25px;
+    animation: fadeInUp 0.8s ease-out; /* Animación para el formulario */
+}
+
+/* Sección de redes sociales */
+.redes_sociales {
+    width: 49%;
+    display: flex;
+    justify-content: center;
+    background-color: #f7eee6;
+    margin: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out; /* Animación de aparición para las redes */
+}
+
+.box-redes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+}
+
+/* Contenedor de imágenes */
+.img {
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+/* Imágenes de redes sociales */
+.redes_sociales img {
+    width: 100px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el hover */
+}
+
+.redes_sociales img:hover {
+    transform: scale(1.1); /* Efecto de aumento de tamaño */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+/* Títulos de imagen */
+.title {
+    font-family: sans-serif;
+    color: #FFA725;
+    background-color: #696767;
+    padding: 10px;
+    border: 1px solid #FFA725;
+    display: block;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.7s ease, color 0.3s ease; /* Transición para el hover */
+}
+
+.title:hover {
+    color: black;
+    background-color: #dad3d3;
+    border: none;
+}
+
+/* Estilo del título de la sección de contacto */
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #FFA725;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: #515151;
+    border: 1px solid #FFA725;
+    padding: 1px;
+    margin: 10px;
+    font-size: 40px;
+}
+
+/* Placeholder de los inputs */
+.contact-section ::placeholder {
+    font-family: sans-serif;
+}
+
+/* Estilos del formulario de contacto */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeInUp 1s ease-out; /* Animación de aparición suave para el formulario */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: box-shadow 0.3s ease; /* Transición suave para el enfoque */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 10px rgba(255, 167, 37, 0.7); /* Sombra de enfoque */
+}
+
+/* Botón de envío */
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #696767;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de hover */
+}
+
+.contact-form button:hover {
+    background-color: #FFA725;
+    color: white;
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 991px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .contact-section {
+        width: 80%;
+        margin-bottom: 35px;
+    }
+
+    .redes_sociales {
+        width: 88%;
+        margin-bottom: 30px;
+    }
+
+    .redes_sociales img {
+        width: 80px;
+    }
+
+    /* Efecto de desvanecimiento para el formulario */
+    .contact-form {
+        animation: fadeInUp 1s ease-out;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

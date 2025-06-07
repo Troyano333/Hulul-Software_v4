@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HULUL - Gestión de Eventos</title>
+    <link href="./css/eventos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <i class="fas fa-crown"></i>
+                HULUL
+            </a>
+        </div>
+        <ul class="sidebar-nav nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="reservas.html"><i class="fas fa-calendar-check"></i> Gestión de Reservas</a></li>
+            <li class="nav-item"><a class="nav-link" href="palcos_mesas.html"><i class="fas fa-warehouse"></i> Palcos y Mesas</a></li>
+            <li class="nav-item"><a class="nav-link active" href="eventos.html"><i class="fas fa-star"></i> Eventos</a></li>
+            <li class="nav-item"><a class="nav-link" href="usuarios.html"><i class="fas fa-users"></i> Usuarios Registrados</a></li>
+            <li class="nav-item"><a class="nav-link" href="reportes.html"><i class="fas fa-chart-line"></i> Reportes Financieros</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="chart-title">Gestión de Eventos</h2>
+            </div>
+
+            <!-- Mensajes de notificación -->
+            <div id="alertContainer"></div>
+
+            <!-- Formulario para Agregar Evento -->
+            <div class="row mb-4">
+                <div class="col-lg-8">
+                    <div class="form-container">
+                        <h3 class="form-title">Agregar Nuevo Evento</h3>
+                        <form id="addEventoForm" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventoNombre" class="form-label">Nombre del Evento *</label>
+                                    <input type="text" class="form-control" id="eventoNombre" name="nombre" required />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventoCategoria" class="form-label">Categoría *</label>
+                                    <select class="form-control" id="eventoCategoria" name="categoria" required>
+                                        <option value="">Seleccionar categoría</option>
+                                        <option value="concierto">Concierto</option>
+                                        <option value="festival">Festival</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventoFecha" class="form-label">Fecha *</label>
+                                    <input type="date" class="form-control" id="eventoFecha" name="fecha" required />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventoHora" class="form-label">Hora *</label>
+                                    <input type="time" class="form-control" id="eventoHora" name="hora" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventoLugar" class="form-label">Lugar</label>
+                                    <input type="text" class="form-control" id="eventoLugar" name="lugar" placeholder="Ej: Gran Salón Disco Caribe" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventoCiudad" class="form-label">Ciudad</label>
+                                    <select class="form-control" id="eventoCiudad" name="ciudad">
+                                        <option value="">Seleccionar ciudad</option>
+                                        <option value="Barranquilla">Barranquilla</option>
+                                        <option value="Bogotá">Bogotá</option>
+                                        <option value="Medellín">Medellín</option>
+                                        <option value="Valledupar">Valledupar</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventoRestricciones" class="form-label">Restricciones</label>
+                                <input type="text" class="form-control" id="eventoRestricciones" name="restricciones" placeholder="Ej: Mayores de 18 años" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventoImagen" class="form-label">Imagen del Evento *</label>
+                                <input type="file" class="form-control" id="eventoImagen" name="foto" accept="image/*" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventoDescripcion" class="form-label">Descripción del Evento *</label>
+                                <textarea class="form-control" id="eventoDescripcion" name="descripcion" rows="3" required placeholder="Descripción del evento..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Evento</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eventos Disponibles -->
+            <div class="section-title">
+                <h3>Eventos Disponibles</h3>
+            </div>
+            <div id="eventosList"></div>
+        </div>
+    </main>
+
+    <script src="./js/eventos.js"></script>
+</body>
+
+</html>

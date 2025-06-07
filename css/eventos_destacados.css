@@ -1,0 +1,99 @@
+/* Estilo para títulos */
+.span_eveto {
+    color: #FFA725;
+    font-weight: bold;
+    background: #515151;
+    border: 1PX solid #FFA725;
+    padding: 1PX;
+    margin: 10px;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Contenedor de tarjetas */
+.card-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    animation: fadeInUp 0.8s ease-out; /* Animación de aparición */
+}
+
+/* Tarjeta base */
+.card {
+    flex: 1 1 18rem;
+    max-width: 18rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de transformación */
+    overflow: hidden;
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+}
+
+/* Efecto hover en la tarjeta */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Imagen dentro de la tarjeta */
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de hover en la imagen de la tarjeta */
+.card:hover .card-img-top {
+    transform: scale(1.05); /* Aumenta ligeramente la imagen al pasar el mouse */
+}
+
+/* Botón personalizado */
+.btn_evetos {
+    display: inline-block;
+    background-color: #1d3557;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición para hover */
+}
+
+.btn_evetos:hover {
+    background-color: #457b9d;
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+/* Responsive para tablets */
+@media (max-width: 991px) {
+    .card {
+        max-width: 100%;
+        margin: 0 auto;
+        transition: transform 0.3s ease; /* Agregar transición para el cambio */
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .card-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+        margin: 20px 0; /* Añadir margen entre las tarjetas */
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

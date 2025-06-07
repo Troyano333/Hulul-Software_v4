@@ -1,0 +1,254 @@
+/* Estilo del botón de navegación */
+.btn-nav {
+    display: inline-block;
+    padding: 12px 20px;
+    color: black;
+    background-color: #FFA725;
+    text-transform: uppercase;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Transición más suave */
+    cursor: pointer;
+    position: relative;
+    bottom: -9px;
+    margin-right: 20px;
+    box-shadow: 0 4px 12px rgba(255, 167, 37, 0.6); /* Sombra suave */
+}
+
+.btn-nav:hover {
+    color: white;
+    background-color: gold;
+    transform: scale(1.1); /* Aumenta el tamaño */
+    box-shadow: 0 8px 20px rgba(255, 167, 37, 0.7); /* Sombra más grande */
+}
+
+/* Animación de fondo para el hover */
+@keyframes btnHoverAnimation {
+    0% {
+        background-color: #FFA725;
+    }
+    50% {
+        background-color: #e69500; /* Cambio de color a dorado */
+    }
+    100% {
+        background-color: #FFA725;
+    }
+}
+
+.btn-nav:hover {
+    animation: btnHoverAnimation 1s ease-in-out infinite; /* Efecto de animación */
+}
+ .titulo-seccion-dinamica { 
+        text-align: center; 
+        font-weight: bold; 
+        color: black; 
+        font-size: 40px; 
+        margin-top: 40px; 
+        margin-bottom: 2.5rem; 
+        position: relative !important; 
+        top: auto !important;
+        left: auto !important;
+        background-color: transparent !important; 
+        border: none !important; 
+        padding: 0 !important; 
+        z-index: auto !important;
+    }
+
+    .icono-destacado { 
+        font-size: 3rem !important; 
+        color: #FFA725; 
+        margin-bottom: 1rem;
+        display: block; 
+        text-align: center;
+    }
+
+    .card-informativa {
+        background-color: #fff; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        height: 100%;
+        padding: 1.5rem;
+        border-left: 4px solid #FFA725; 
+    }
+    .card-informativa:hover {
+        transform: translateY(-5px) scale(1.02); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card-informativa .card-title { 
+        font-weight: bold;
+        color: #333; 
+        margin-top: 0.5rem;
+    }
+    .card-informativa p {
+        font-size: 1rem; 
+        color: #515151; 
+    }
+    .card-informativa p a {
+        color: #FFA725; 
+        font-weight: 600;
+    }
+    .card-informativa p a:hover {
+        text-decoration: underline !important; 
+    }
+
+    #galeria .img-fluid {
+        width: 100%;
+        height: 250px; 
+        object-fit: cover; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        cursor: pointer;
+        border: 3px solid transparent; 
+    }
+    #galeria .img-fluid:hover {
+        transform: scale(1.05) translateY(-5px); 
+        box-shadow: 0 0 15px rgba(255, 167, 37, 0.7); 
+        border-color: #FFA725; 
+    }
+
+    #testimonios {
+        background-color: #FFF5E4; 
+        padding-top: 40px; 
+        padding-bottom: 40px;
+    }
+    #testimonios .card { 
+      border-top: 4px solid #FFA725;
+      height: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      border-radius: 15px; 
+      background-color: #fff;
+    }
+     #testimonios img.rounded-circle {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        border: 3px solid #FFA725; 
+    }
+    #testimonios .card-title { 
+        color: #333; 
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    #testimonios .card-text { 
+        color: #515151; 
+        font-size: 0.95rem; 
+        line-height: 1.6;
+    }
+
+    #suscripcion {
+      padding-top: .5rem;
+      padding-bottom: 0.5rem;
+      background-color: #515151; 
+    }
+    #suscripcion h2.titulo-seccion-dinamica { 
+        color: #FFA725 !important; 
+        font-weight: bold;
+        font-size: 2.8rem; 
+        text-transform: uppercase; 
+        margin-bottom: 1rem;
+        background: transparent !important; 
+        border: none !important; 
+    }
+    #suscripcion p.lead {
+        color: #f8f9fa; 
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    #suscripcion .form-control { 
+        border-radius: 25px 0 0 25px; 
+        border: 2px solid #FFA725;
+        padding: 0.8rem 1.25rem;
+        font-size: 1rem;
+    }
+    #suscripcion .form-control:focus {
+        box-shadow: 0 0 0 0.25rem rgba(255, 167, 37, 0.5); 
+        border-color: #FFA725;
+    }
+    #suscripcion .btn-warning { 
+        border-radius: 0 25px 25px 0;
+        background-color: #FFA725; 
+        color: black; 
+        text-transform: uppercase; 
+        padding: 0.8rem 1.5rem;
+        font-weight: bold; 
+        border: 2px solid #FFA725;
+        font-size: 1rem;
+        transition: all 0.3s ease; 
+    }
+    #suscripcion .btn-warning:hover {
+        background-color: gold; 
+        color: white;
+        border-color: gold;
+        transform: scale(1.05); 
+    }
+    #suscripcionMensaje p {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    #suscripcionMensaje .text-success { color: #A7F3D0 !important; } 
+    #suscripcionMensaje .text-danger { color: #FECACA !important; }  
+    #suscripcionMensaje .text-info { color: #BFDBFE !important; }   
+
+    .footer .link {
+        width: 100%; 
+        margin-bottom: 1.5rem; 
+    }
+    .footer.container-fluid { 
+        background-color: #F5EEDC; 
+        padding-top: 20px; 
+        padding-bottom: 10px; 
+    }
+    .footer-copyright-text {
+        color: #515151; 
+        padding-top: 15px; 
+        margin-top: 15px; 
+        border-top: 1px solid #ddd; 
+    }
+
+    /* Estilos para nuevas secciones: Noches Especiales y Paquetes */
+    .card-evento-especial, .card-paquete-promo {
+        background-color: #fff;
+        border-radius: 15px; /* Como .card en eventos_destacados.css */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        overflow: hidden; /* Para que la imagen no se salga del borde redondeado */
+    }
+    .card-evento-especial:hover, .card-paquete-promo:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .card-evento-especial img, .card-paquete-promo img {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+    }
+    .card-evento-especial .card-body, .card-paquete-promo .card-body {
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+    .card-evento-especial .card-title, .card-paquete-promo .card-title {
+        color: #FFA725; /* Color principal para el título */
+        font-weight: bold;
+    }
+    .card-evento-especial .card-date, .card-paquete-promo .promo-price {
+        font-weight: 600;
+        color: #515151;
+        font-size: 0.9rem;
+    }
+    .card-paquete-promo .promo-price {
+        font-size: 1.2rem;
+        color: #28a745; /* Verde para el precio */
+        margin-bottom: 0.5rem;
+    }
+    .card-evento-especial .btn_evetos, .card-paquete-promo .btn_evetos { /* Reutilizando tu clase de botón */
+        margin-top: auto; /* Empuja el botón hacia abajo */
+        align-self: flex-start; /* Alinea el botón a la izquierda si el texto no lo empuja */
+    }

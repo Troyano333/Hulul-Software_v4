@@ -1,0 +1,27 @@
+.palcos_img h4{
+     /* position: relative;
+     left: 270px;
+     bottom: 158px;
+        background-color: rgb(34, 36, 36);
+        color: gold;
+         border: 1px solid goldenrod;
+         padding: 5px; */
+         display: none;
+}
+
+
+
+
+
+@media(max-width:991px){
+    .palcos_img h4{
+        position: relative;
+        background-color: rgb(34, 36, 36);
+        color: gold;
+        left: 50%;
+        top: 160px;
+        border: 1px solid goldenrod;
+        text-align: center;
+        display: initial;
+    }
+}

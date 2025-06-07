@@ -1,0 +1,234 @@
+
+        /* Estilos Adicionales y Mejoras (mueve a mapa.css o tu CSS principal) */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFF5E4; /* Color de fondo de .contenedor en index.html */
+            color: #333;
+            padding-top: 0; 
+            padding-bottom: 3rem;
+            overflow-x: hidden; 
+        }
+
+        .map-page-header {
+            background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%); /* Fondo oscuro como títulos/spans de index */
+            color: #FFA725; /* Color naranja principal */
+            padding: 3rem 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .map-page-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .map-page-header h1 .bi {
+            font-size: 2.6rem;
+            margin-right: 0.75rem;
+            vertical-align: -0.1em;
+        }
+        .map-page-header p.lead {
+            font-size: 1.15rem;
+            color: #f0f0f0; /* Texto claro sobre fondo oscuro */
+            margin-bottom: 0;
+            font-weight: 300;
+        }
+
+        .map-main-container { 
+            background-color: #ffffff; /* Fondo blanco para el contenido principal */
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.07);
+        }
+        
+        .map-text-instructions { 
+            padding: 1.5rem;
+            background-color: #fff9f0; /* Naranja muy pálido, casi crema */
+            border-radius: 0.5rem;
+            height: 100%; 
+            border: 1px solid #ffe0b3; /* Borde naranja claro */
+        }
+        .map-text-instructions h2 { 
+            color: #FFA725;
+            font-weight: 600;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #FFA725; /* Borde inferior naranja más fuerte */
+        }
+        /* Se mantienen tus clases .D, .D-1, .D-2 para los spans, pero se ajusta su estilo aquí para el contexto del mapa */
+        .map-text-instructions h2 .D, 
+        .map-text-instructions h2 .D-1, 
+        .map-text-instructions h2 .D-2 { 
+            color: #fff; 
+            background-color: #FFA725;
+            padding: 0.2em 0.4em;
+            border-radius: 0.25rem;
+            font-size: inherit; 
+            border: none;
+        }
+        .map-text-instructions p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #515151; /* Color de párrafo de index */
+            margin-bottom: 1.5rem;
+        }
+        .map-text-instructions p .D-1, 
+        .map-text-instructions p .D-2 { 
+             color: #e68900; /* Naranja más oscuro para destacar en párrafo */
+             font-weight: bold;
+             background: transparent; 
+             padding:0;
+             border:none;
+        }
+        .map-text-instructions .logo-discoteca {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .map-text-instructions .logo-discoteca img {
+            max-width: 150px; 
+            animation: mover 2s infinite alternate ease-in-out; 
+        }
+
+        .interactive-map-wrapper { 
+            background-color: #f8f9fa; 
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+            position: relative; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .interactive-map-wrapper .map-title { 
+            text-align: center;
+            text-transform: uppercase;
+            color: #343a40; /* Color oscuro, casi negro */
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .interactive-map-wrapper .map-image-container { 
+            flex-grow: 1; 
+            position: relative; 
+            overflow: hidden; 
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+        }
+        .interactive-map-wrapper .map-image { 
+            display: block;
+            width: 100%;
+            height: 100%; 
+            user-select: none;
+            object-fit: contain; 
+        }
+        .interactive-map-wrapper .map-subtitle { 
+            text-align: center;
+            color: #FFA725;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Estilos para las zonas interactivas (puntos) */
+        .zone, .zonerojo {
+            position: absolute;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s ease;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: clamp(8px, 0.8vw, 10px); 
+            border-radius: 50%;
+            user-select: none;
+            width: 18px; /* Un poco más grandes para mejor interacción */
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4); /* Sombra más definida */
+            border: 1px solid rgba(255,255,255,0.3); /* Borde sutil */
+        }
+        .zone { background-color: rgba(0, 255, 42, 0.9); } /* Verde más opaco */
+        .zone:hover { background-color: rgba(21, 115, 71, 1); transform: scale(1.25); } /* Mayor escala en hover */
+        
+        .zonerojo { background-color: rgba(255, 0, 25, 0.9); } /* Rojo más opaco */
+        .zonerojo:hover { background-color: rgba(187, 45, 59, 1); transform: scale(1.25); }
+
+        .zone::after, .zonerojo::after { 
+            content: attr(data-zone); 
+            position: absolute;
+            bottom: 130%; /* Un poco más arriba */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #343a40; 
+            color: white;
+            padding: 0.4rem 0.7rem; /* Más padding en tooltip */
+            border-radius: 0.3rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
+            z-index: 100;
+            font-size: 0.85rem; /* Texto de tooltip un poco más grande */
+            visibility: hidden; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .zone:hover::after, .zonerojo:hover::after {
+            opacity: 1;
+            visibility: visible; 
+        }
+        /* Posicionamiento de las zonas (se mantienen tus porcentajes originales) */
+        #palco-vip { top: 22%; left: 25%; } #mesa-vip { top: 21%; left: 75%; }
+        #palco-plata { top: 26%; left: 21%; } #mesa-plata { top: 24%; left: 78%; }
+        #palco-bronce { top: 31%; left: 21%; } #mesa-bronce { top: 29%; left: 79%; }
+        #vip-rojo { top: 37%; left: 21%; } #plata-rojo { top: 42%; left: 23%; }
+        #mesavip-rojo { top: 35%; left: 79%; } #mesaplata-rojo { top: 40%; left: 79%; }
+
+        .btn-back-custom {
+            display: inline-block; font-weight: 700; color: black; background-color: #FFA725; 
+            text-align: center; vertical-align: middle; cursor: pointer; border: 1px solid #e68900; 
+            padding: 0.8rem 2rem; font-size: 1rem; text-transform: uppercase; 
+            border-radius: 50px; text-decoration: none; transition: all 0.25s ease-in-out; 
+            box-shadow: 0 4px 10px rgba(255, 167, 37, 0.3); 
+        }
+        .btn-back-custom:hover, .btn-back-custom:focus {
+            color: white; background-color: gold; border-color: #e6b800; 
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: 0 7px 18px rgba(218, 165, 32, 0.45); 
+        }
+        .btn-back-custom .bi { 
+            margin-right: 0.6rem; font-size: 1.1rem; vertical-align: -0.15em; 
+        }
+
+        @keyframes mover {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(10px); } 
+            100% { transform: translateY(0px); }
+        }
+
+        /* Ajustes responsivos (se mantienen tus media queries con ajustes menores) */
+        @media (max-width: 991px) { 
+            .map-text-instructions { margin-bottom: 2rem; }
+            .interactive-map-wrapper .map-image-container { height: 450px; } 
+        }
+        @media (max-width: 767px) { 
+            .map-page-header { padding: 2rem 1rem; margin-bottom: 1.5rem; }
+            .map-page-header h1 { font-size: 2.2rem; }
+            .map-page-header p.lead { font-size: 1rem; }
+            .map-main-container { padding: 1rem; }
+            .map-text-instructions h2 { font-size: 1.5rem; }
+            .map-text-instructions p { font-size: 0.9rem; }
+            .interactive-map-wrapper .map-image-container { height: 350px; } 
+            .interactive-map-wrapper .map-title { font-size: 1.25rem; }
+            .interactive-map-wrapper .map-subtitle { font-size: 1rem; }
+            .zone, .zonerojo { width: 14px; height: 14px; }
+            /* Tus posiciones de zonas para móvil se mantienen */
+             #palco-vip { top: 51%; left: 25%; } #palco-plata { top: 58%; left: 21%; }
+             #palco-bronce { top: 70%; left: 21%; } #mesa-vip { top: 50%; left: 75%; }
+             #mesa-plata { top: 56%; left: 79%; } #mesa-bronce { top: 67%; left: 79%; }
+             #vip-rojo { top: 81%; left: 21%; } #plata-rojo { top: 92%; left: 22%; }
+             #mesavip-rojo { top: 78%; left: 78%; } #mesaplata-rojo { top: 89%; left: 78%; }
+        }

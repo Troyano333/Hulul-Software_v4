@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmación de Pago - Hulul Discoteca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/confirmacion_pago.css" />
+    <link rel="icon" href="./img/h.png" type="image/png" />
+</head>
+
+<body>
+    <div class="confirmation-page-header">
+        <div class="container">
+            <h1><i class="bi bi-patch-check-fill"></i> ¡Pago Exitoso!</h1>
+            <p class="lead">Tu reserva en Hulul Discoteca ha sido confirmada. ¡Prepárate para la diversión!</p>
+        </div>
+    </div>
+    <div class="container confirmation-main-container">
+        <div class="row">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="info-block" id="detalles-reserva">
+                    <h2><i class="bi bi-card-list"></i> Detalles de tu Reserva</h2>
+                    <p><strong>Nombre:</strong> <span id="nombre_reserva">Cargando...</span></p>
+                    <p><strong>Apellido:</strong> <span id="apellido_reserva">Cargando...</span></p>
+                    <p><strong>Evento:</strong> <span id="evento_reserva">Cargando...</span></p>
+                    <p><strong>Fecha del Evento:</strong> <span id="fecha_reserva">Cargando...</span></p>
+                    <p><strong>Hora:</strong> <span id="hora_reserva">Cargando...</span></p>
+                    <p><strong>Lugar:</strong> <span id="lugar_reserva">Cargando...</span></p>
+                    <p><strong>Zona Reservada:</strong> <span id="zona_reserva">Cargando...</span></p>
+                    <p><strong>Precio:</strong> <span id="precio_reserva">Cargando...</span></p>
+                </div>
+
+                <div class="info-block qr-code-block" id="codigo-qr">
+                    <h2><i class="bi bi-qr-code"></i> Tu Código QR</h2>
+                    <img src="./img/qr.png" alt="[Imagen de Código QR de la reserva]" id="qr_imagen" />
+                    <p class="qr-instruction">Presenta este código QR en la entrada de la discoteca para validar tu reserva.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="info-block discoteca-info-block" id="info-discoteca">
+                    <h2><i class="bi bi-building"></i> Información de Hulul</h2>
+                     <ul class="contact-details-list">
+                        <li><i class="bi bi-shop"></i> <strong>Nombre:</strong> Hulul Discoteca</li>
+                        <li><i class="bi bi-geo-alt-fill"></i> <strong>Dirección:</strong> Calle 13 #39-03, Cartagena</li>
+                        <li><i class="bi bi-telephone-fill"></i> <strong>Teléfono:</strong> (320) 456-7890</li>
+                    </ul>
+                    <hr class="my-3">
+                    <p class="text-center fw-bold">¡Disfruta de tu evento!</p>
+                    <p class="text-center small text-muted">Recuerda llegar con anticipación y seguir las indicaciones de nuestro personal para una experiencia inolvidable.</p>
+                </div>
+                 <div class="info-block text-center" id="atencion-qr">
+                    <h2><i class="bi bi-exclamation-triangle-fill text-warning"></i> ¡Atención!</h2>
+                    <p>Con este código QR podrás reclamar tu reserva en la discoteca. Es personal e intransferible.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn-back-custom"><i class="bi bi-arrow-left-circle-fill"></i> Volver a la Página Principal</a>
+        </div>
+    </div>
+
+        <script src="./js/confirmacion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

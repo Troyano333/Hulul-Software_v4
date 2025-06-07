@@ -1,0 +1,22 @@
+@media(max-width:990px){
+    .content-img{
+        display: none;
+    }
+    .content-formulario{
+        width: 100%;
+        padding: 0;
+        margin-left: 0;
+    }
+    .resrvas{
+        margin-bottom: 220px;
+    }
+
+    form{
+        margin-left: 0;
+        width: 100%;
+    }
+
+   .btn-img{
+    display: none;
+   }
+}

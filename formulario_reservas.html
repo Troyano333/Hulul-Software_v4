@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realizar Reserva - Discoteca Hulul</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/realizar_reservas.css" />
+    <link rel="stylesheet" href="./css/paypal.css">
+    <link rel="icon" href="./img/h.png" type="image/png" />      
+</head>
+
+<body>
+    <!-- CONTENEDOR PARA TOASTS (Notificaciones) -->
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div id="toastPlacement" class="toast-container position-fixed top-0 end-0 p-3 pt-5"> 
+            <!-- Los toasts se añadirán aquí por JavaScript -->
+        </div>
+    </div>
+
+    <div class="reservas-page-header">
+        <div class="container">
+            <h1><i class="bi bi-calendar2-heart-fill"></i> Realiza tu Reserva</h1>
+            <p class="lead">Completa el formulario para asegurar tu noche perfecta en Hulul.</p>
+        </div>
+    </div>
+    <div class="container reservas-section-wrapper">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12 mb-4 mb-lg-0">
+                 <div class="carousel-showcase"> 
+                    <div class="carousel-3d-container">
+                        <div class="carousel-3d-scene">
+                            <div class="carousel-3d-item">
+                                <img src="./img_eventos/dj_dever.jfif" alt="[Imagen de Ambiente Discoteca Hulul 1]" />
+                                <div class="carousel-3d-caption">
+                                    <h5>Ambiente Electrizante</h5>
+                                    <p>Vive la mejor experiencia con DJs en vivo.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-3d-item">
+                                <img src="./img/palco_vip.jpg" alt="[Imagen de Luces y Sonido Hulul]" />
+                                <div class="carousel-3d-caption">
+                                    <h5>Luces y Música</h5>
+                                    <p>Sonido profesional y efectos espectaculares.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-3d-item">
+                                <img src="./img/palco_plata.jpg" alt="[Imagen de Zona VIP Exclusiva Hulul]" />
+                                <div class="carousel-3d-caption">
+                                    <h5>Experiencia VIP</h5>
+                                    <p>Reserva tu palco VIP para un trato exclusivo.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-3d-item">
+                                <img src="./img/palco_basico.jpg" alt="[Imagen de Eventos Especiales en Hulul]" />
+                                <div class="carousel-3d-caption">
+                                    <h5>Eventos Únicos</h5>
+                                    <p>Conciertos y fiestas temáticas cada semana.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <div class="form-reservas-container">
+                    <h1 class="form-title-animated">Realizar <span class="reser-h1">Reservas</span></h1>
+                    <form id="formReserva">
+                        <div class="input-row">
+                            <div>
+                                <label for="nombre" class="form-label">Nombre(s)</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" required
+                                    placeholder="Ingresa tu nombre" />
+                            </div>
+                            <div>
+                                <label for="apellido" class="form-label">Apellido(s)</label>
+                                <input type="text" class="form-control" name="apellido" id="apellido" required
+                                    placeholder="Ingresa tu apellido" />
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div>
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" name="email" id="email" required
+                                    placeholder="tu.correo@example.com" />
+                            </div>
+                            <div>
+                                <label for="telefono" class="form-label">Teléfono de Contacto</label>
+                                <input type="tel" class="form-control" name="telefono" id="telefono" required
+                                    placeholder="Ej: 3001234567" />
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="full-width-field"> <label for="eventoSeleccionado" class="form-label">Evento
+                                    Seleccionado</label>
+                                <input type="text" class="form-control" name="eventoSeleccionado"
+                                    id="eventoSeleccionado" readonly />
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div>
+                                <label for="zonaSeleccionada" class="form-label">Zona Elegida (Palco o Mesa)</label>
+                                <input type="text" class="form-control" name="zonaSeleccionada" id="zonaSeleccionada"
+                                    readonly />
+                            </div>
+                            <div>
+                                <label for="precioZona" class="form-label">Precio de la Zona</label>
+                                <input type="text" class="form-control" name="precioZona" id="precioZona" readonly />
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div>
+                                <label for="fechaEvento" class="form-label">Fecha del Evento</label>
+                                <input type="text" class="form-control" name="fechaEvento" id="fechaEvento" readonly />
+                            </div>
+                            <div>
+                                <label for="horaEvento" class="form-label">Hora del Evento</label>
+                                <input type="text" class="form-control" name="horaEvento" id="horaEvento" readonly />
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="full-width-field">
+                                <label for="lugar" class="form-label">Lugar de Preferencia (Si aplica)</label>
+                                <select name="lugar" id="lugar" class="form-select" required>
+                                    <option value="">Selecciona un lugar si es diferente al del evento...</option>
+                                    <option value="El-Centro">El Centro</option>
+                                    <option value="Norte">Norte</option>
+                                    <option value="Sur">Sur</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-reservar-custom"><i
+                                class="bi bi-check-circle-fill"></i> Confirmar Reserva y Pagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn-back-custom"><i class="bi bi-arrow-left-circle-fill"></i> Volver a la
+                Página Principal</a>
+        </div>
+    </div>
+
+    <!-- MODAL DE SELECCIÓN DE PAGO (Mantenido pero con estilos mejorados) -->
+    <div class="modal fade" id="paymentMethodModal" tabindex="-1" aria-labelledby="paymentMethodModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="./img/h.png" alt="[Logo de Hulul Discoteca]" class="modal-logo">
+                    <h5 class="modal-title" id="paymentMethodModalLabel">Finalizar Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0 border-end border-secondary pe-md-4">
+                            <h6 class="mb-3">Resumen de tu Reserva:</h6>
+                            <p class="mb-1 small"><strong>Evento:</strong> <span id="summaryEvento" class="text-light"></span></p>
+                            <p class="mb-1 small"><strong>Zona:</strong> <span id="summaryZona" class="text-light"></span></p>
+                            <p class="mb-3 small"><strong>Fecha:</strong> <span id="summaryFecha" class="text-light"></span></p>
+                            <hr class="my-3">
+                            <p class="text-center mb-1">Total a Pagar:</p>
+                            <p class="text-center"><strong id="modalTotalPrice" class="h2">Cargando...</strong></p>
+                        </div>
+                        <div class="col-md-6 ps-md-4">
+                             <h6 class="mb-3">Selecciona tu Método de Pago:</h6>
+                            <div id="paypal-button-container-modal" class="text-center">
+                                <!-- Los botones de PayPal se renderizarán aquí -->
+                            </div>
+                             <!-- Aquí podrías añadir otros métodos de pago como botones estilizados -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between px-4 pb-3">
+                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-dismiss="modal"><i class="bi bi-arrow-left-short"></i> Modificar Datos</button>
+                    <!-- Botón de cancelar selección eliminado para simplificar, ya que el modal se cierra con X o ESC -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL SELECCIÓN PAGO -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="js/paypal.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AUz_JSeupSy8lcj7LWQB9HPZ6PMZsEPJpbDGxzPycCoB9PqJBxZEmGuJw0ivc98HvEgCFdua09wrxDvk&currency=USD&disable-funding=credit,card" data-sdk-integration-source="developer-studio"></script>
+    
+
+</body>
+</html>

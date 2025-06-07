@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HULUL - Gestión de Reservas</title>
+  <link href="./css/reservas.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-brand">
+        <i class="fas fa-crown"></i> HULUL
+      </a>
+    </div>
+    <ul class="sidebar-nav nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html" onclick="showSection('dashboard')">
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="reservas.html" onclick="showSection('reservas')">
+          <i class="fas fa-calendar-check"></i> Gestión de Reservas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="palcos_mesas.html" onclick="showSection('inventario')">
+          <i class="fas fa-warehouse"></i> Palcos y Mesas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="eventos.html" onclick="showSection('eventos')">
+          <i class="fas fa-star"></i> Eventos
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="usuarios.html" onclick="showSection('usuarios')">
+          <i class="fas fa-users"></i> Usuarios Registrados
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="reportes.html" onclick="showSection('reportes')">
+          <i class="fas fa-chart-line"></i> Reportes Financieros
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div id="reservas" class="section active">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="chart-title">Gestión de Reservas</h2>
+      </div>
+
+      <!-- Estadísticas de Reservas -->
+      <div class="row mb-4">
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="stats-number" id="totalReservas">0</h3>
+                <p class="text-muted mb-0">Reservas Activas</p>
+              </div>
+              <div class="text-warning fs-1">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráficos -->
+      <div class="row mb-4">
+        <div class="col-lg-6 col-md-6">
+          <div class="chart-container">
+            <h5 class="chart-title">Reservas por Día</h5>
+            <canvas id="reservasPorDiaChart" width="300" height="200"></canvas>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="chart-container">
+            <h5 class="chart-title">Estado de Reservas</h5>
+            <canvas id="estadoReservasChart" width="300" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de Reservas -->
+      <div class="table-container">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Email</th>
+                <th>Tipo</th>
+                <th>Mesa/Palco</th>
+                <th>Evento</th>
+                <th>Estado</th>
+                <th>Precio</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="reservasTableBody">
+              <!-- Las filas se llenan con JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS y dependencias -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    let reservasPorDiaChart;
+    let estadoReservasChart;
+
+    const reservasTableBody = document.getElementById('reservasTableBody');
+    const totalReservas = document.getElementById('totalReservas');
+    const ctxReservasPorDia = document.getElementById('reservasPorDiaChart').getContext('2d');
+    const ctxEstadoReservas = document.getElementById('estadoReservasChart').getContext('2d');
+
+    async function cargarReservas() {
+      try {
+        const response = await fetch('./php/get_reservas.php');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const reservas = await response.json();
+
+        totalReservas.textContent = reservas.length;
+        reservasTableBody.innerHTML = '';
+
+        reservas.forEach(r => {
+          const tr = document.createElement('tr');
+          const precioRaw = r.precio ?? '';
+          // Limpia el string para convertirlo en número
+          const precioNumerico = Number(precioRaw.replace(/[^0-9,-]+/g,"").replace(",","."));
+          const precioFormateado = (!isNaN(precioNumerico) && precioNumerico > 0)
+            ? precioNumerico.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })
+            : '-';
+
+          tr.innerHTML = `
+            <td>${r.id ?? ''}</td>
+            <td>${(r.nombre ?? '') + ' ' + (r.apellido ?? '')}</td>
+            <td>${r.email ?? ''}</td>
+            <td>${r.tipo_palco ?? ''}</td>
+            <td></td>
+            <td>${r.evento ?? ''}</td>
+            <td>Confirmada</td>
+            <td>${precioFormateado}</td>
+            <td>
+              <button class="btn btn-danger btn-sm btn-borrar" data-id="${r.id}">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          `;
+          reservasTableBody.appendChild(tr);
+        });
+      } catch (error) {
+        console.error('Error cargando reservas:', error);
+        reservasTableBody.innerHTML = `<tr><td colspan="9">Error cargando reservas</td></tr>`;
+        totalReservas.textContent = '0';
+      }
+    }
+
+    async function cargarEstadisticas() {
+      try {
+        const response = await fetch('./php/get_estadisticas.php');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+
+        const dias = data.reservasPorDia.map(d => {
+          const date = new Date(d.dia);
+          return date.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short' });
+        });
+        const totalPorDia = data.reservasPorDia.map(d => Number(d.total));
+
+        if (reservasPorDiaChart) reservasPorDiaChart.destroy();
+        reservasPorDiaChart = new Chart(ctxReservasPorDia, {
+          type: 'line',
+          data: {
+            labels: dias,
+            datasets: [{
+              label: 'Reservas por Día',
+              data: totalPorDia,
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 2,
+              fill: false,
+              tension: 0.3
+            }]
+          },
+          options: {
+            scales: { y: { beginAtZero: true, precision: 0 } },
+            plugins: { legend: { display: true } }
+          }
+        });
+
+        const estados = data.estadoReservas.map(e => e.estado ?? 'Confirmada');
+        const totalesEstado = data.estadoReservas.map(e => Number(e.total));
+        const coloresEstado = estados.map(e => {
+          if (e.toLowerCase() === 'confirmada') return '#10b981';
+          if (e.toLowerCase() === 'pendiente') return '#f59e0b';
+          if (e.toLowerCase() === 'cancelada') return '#ef4444';
+          return '#888';
+        });
+
+        if (estadoReservasChart) estadoReservasChart.destroy();
+        estadoReservasChart = new Chart(ctxEstadoReservas, {
+          type: 'pie',
+          data: {
+            labels: estados,
+            datasets: [{
+              data: totalesEstado,
+              backgroundColor: coloresEstado,
+              hoverOffset: 6
+            }]
+          },
+          options: {
+            plugins: { legend: { position: 'bottom' } }
+          }
+        });
+
+      } catch (error) {
+        console.error('Error cargando estadísticas:', error);
+      }
+    }
+
+    function refrescarTodo() {
+      cargarReservas();
+      cargarEstadisticas();
+    }
+
+    reservasTableBody.addEventListener('click', async (e) => {
+      if (e.target.closest('.btn-borrar')) {
+        const btn = e.target.closest('.btn-borrar');
+        const id = btn.getAttribute('data-id');
+        if (confirm('¿Seguro que quieres borrar esta reserva?')) {
+          try {
+            const formData = new FormData();
+            formData.append('id', id);
+            const response = await fetch('./php/delete_reserva.php', {
+              method: 'POST',
+              body: formData,
+            });
+            const result = await response.json();
+            if (result.status === 'success') {
+              alert('Reserva eliminada');
+              refrescarTodo();
+            } else {
+              alert('Error al eliminar: ' + result.message);
+            }
+          } catch (error) {
+            alert('Error en la solicitud');
+            console.error(error);
+          }
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      refrescarTodo();
+      setInterval(refrescarTodo, 60000); // Actualiza cada minuto
+    });
+
+    function showSection(section) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(s => s.classList.remove('active'));
+      document.getElementById(section).classList.add('active');
+    }
+  </script>
+</body>
+</html>

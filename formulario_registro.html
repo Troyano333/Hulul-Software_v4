@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Hulul Discoteca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/formulario_registro.css">
+    <link rel="icon" href="./img/h.png" type="image/png" />
+</head>
+
+<body>
+    <div class="register-header">
+        <h1><i class="bi bi-person-plus-fill"></i> Crea tu Cuenta en Hulul</h1>
+        <p class="lead">Regístrate para acceder a reservas exclusivas y la mejor diversión.</p>
+    </div>
+    <div class="register-container-wrapper">
+        <div class="register-form-card">
+            <h2 class="form-title-main">Formulario de <span class="highlight">Registro</span></h2>
+            <p class="form-subtitle-main">Completa tus datos para unirte a la comunidad Hulul.</p>
+
+            <form method="POST" action="./php/guardar_usuario.php" id="registroForm">
+                <div class="input-row">
+                    <div class="input-group-half">
+                        <label for="nombre" class="form-label">Nombres Completos</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ej: Ana Sofía" required>
+                        </div>
+                    </div>
+                    <div class="input-group-half">
+                        <label for="cedula" class="form-label">Cédula</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-vcard-fill"></i></span>
+                            <input type="text" class="form-control" name="cedula" id="cedula" placeholder="Número de identificación" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group-half">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-geo-alt-fill"></i></span>
+                            <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ej: Calle 10 # 20-30" required>
+                        </div>
+                    </div>
+                    <div class="input-group-half">
+                        <label for="celular" class="form-label">Celular</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-phone-fill"></i></span>
+                            <input type="number" class="form-control" name="celular" id="celular" placeholder="Ej: 3001234567" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group-half">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="tu.correo@example.com" required>
+                        </div>
+                    </div>
+                    <div class="input-group-half">
+                        <label for="contrasena" class="form-label">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                            <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Crea una contraseña segura" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="formError" class="error-text text-center mb-3"></div> 
+                <div class="form-txt-links">
+                    <a href="politicayprivacidad.html" target="_blank">Política de Privacidad</a>
+                    <a href="terminosycondiciones.html" target="_blank">Términos y Condiciones</a>
+                </div>
+
+                <button type="submit" class="btn btn-register-custom" id="registerButton"><i class="bi bi-check-circle-fill"></i> Registrarse</button>
+                <a href="login.html" class="btn btn-login-link-custom"><i class="bi bi-box-arrow-in-right"></i> Ya Tengo Una Cuenta</a>
+            </form>
+        </div>
+    </div>
+
+    <div id="animationContainer" class="animation-container">
+        <div id="loading" class="loading"></div>
+        <div id="checkmark" class="checkmark"><i class="bi bi-check-lg"></i></div>
+        <p id="successMessage">¡Registro exitoso!</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+
+
+        <!-- ESTO ES PARA LA CONTRASEÑA -->
+    <script>
+        document.getElementById("registroForm").addEventListener("submit", function(event) {
+            const contrasena = document.getElementById("contrasena").value;
+            const formErrorDiv = document.getElementById("formError");
+
+            // Expresión regular para validar la contraseña
+            const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!#$%&])[A-Za-z\d!#$%&]{8,}$/;
+
+            if (!regex.test(contrasena)) {
+                formErrorDiv.textContent = "La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial (ej: !#$%&).";
+                formErrorDiv.style.display = 'block';
+                event.preventDefault(); // Evitar el envío del formulario
+            }
+        });
+    </script>
+</body>
+
+</html>

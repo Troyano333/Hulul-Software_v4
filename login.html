@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Hulul Discoteca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="icon" href="./img/h.png" type="image/png" />
+
+
+</head>
+
+<body>
+    <div class="login-header">
+        <h1><i class="bi bi-box-arrow-in-right"></i> Acceso Hulul</h1>
+        <p class="lead">Ingresa para gestionar tus reservas y disfrutar de la mejor experiencia.</p>
+    </div>
+    <div class="login-container-wrapper">
+        <div class="login-form-card">
+            <h2 class="form-title">Iniciar <span class="highlight">Sesión</span></h2>
+            <p class="form-subtitle">Bienvenido de nuevo. ¡Te estábamos esperando!</p>
+
+            <form id="loginForm" method="POST" novalidate>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="tu.correo@example.com" required />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                     <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required />
+                    </div>
+                    <div id="passwordError" class="error-text"></div>
+                </div>
+                
+                <button type="submit" class="btn btn-login-custom" id="loginButton"><i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión</button>
+            </form>
+
+            <div class="mt-3"> 
+                <button class="btn btn-admin-custom" id="adminButton"><i class="bi bi-person-badge"></i> Acceso Administrador</button>
+            </div>
+
+            <div class="login-links">
+                <p>¿No tienes una cuenta? <a href="formulario_registro.html">Regístrate aquí</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const passwordError = document.getElementById('passwordError'); 
+
+        if (loginForm) { 
+            loginForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                passwordError.style.display = 'none'; 
+                passwordError.textContent = ''; 
+
+                const formData = new FormData(loginForm);
+                const loginButton = document.getElementById('loginButton');
+                const originalButtonText = loginButton.innerHTML;
+
+                loginButton.disabled = true;
+                loginButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Ingresando...';
+
+                try {
+                    const response = await fetch('./php/login_verify.php', { 
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json().catch(() => null);
+                        throw new Error(errorData?.message || `Error HTTP: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        window.location.href = 'eventos.html'; 
+                    } else {
+                        passwordError.textContent = result.message || 'Correo o contraseña incorrectos.';
+                        passwordError.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Error en la conexión o procesamiento:', error);
+                    passwordError.textContent = error.message || 'Error al intentar iniciar sesión. Inténtalo de nuevo.';
+                    passwordError.style.display = 'block';
+                } finally {
+                    loginButton.disabled = false;
+                    loginButton.innerHTML = originalButtonText;
+                }
+            });
+        }
+
+        const adminButton = document.getElementById("adminButton");
+        if (adminButton) { 
+            adminButton.addEventListener("click", function() {
+                window.location.href = "./hulul-admin/login.html"; 
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.footer {
+    padding: 20px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F5EEDC;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(234, 239, 243, 0.7); /* Fondo más suave */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más intensa */
+    width: 250px; /* Ajustado para mejor distribución */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de hover en el contenedor de enlaces */
+.link:hover {
+    transform: translateY(-5px); /* Desplazamiento sutil al pasar el mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.link h3 {
+    font-size: 18px;
+    color: #FFA725;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo de los enlaces */
+.link a {
+    font-size: 17px;
+    color: #181818;
+    display: block;
+    padding: 8px 0;
+    transition: all 0.3s ease; /* Transición suave */
+    font-weight: 500;
+    text-align: center;
+}
+
+.link a:hover {
+    color: rgb(248, 179, 3);
+    text-decoration: underline; /* Subrayado al hacer hover */
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+/* Títulos dentro de la clase .redes */
+.redes h3 {
+    position: relative;
+    left: 3px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    .link {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .link h3 {
+        font-size: 16px;
+    }
+
+    .link a {
+        font-size: 16px;
+    }
+}

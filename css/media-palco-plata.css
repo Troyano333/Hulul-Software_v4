@@ -1,0 +1,43 @@
+@media(max-width:991px){
+    .btn-plata{
+       top: 10px; 
+       color: black;
+      left: 0;
+    }
+    .plata{
+        margin-bottom: 100px;
+    }
+}
+
+@media(max-width:1002px){
+    .btn-plata{
+        top: 20px;
+        
+    }
+    .plata{
+        margin-bottom: 100px;
+    }
+}
+@media(max-width:1144px){
+    .btn-plata{
+        top: 20px;
+        
+    }
+}
+@media(max-width:1207px){
+    .btn-plata{
+        top: 20px;
+    }
+}
+@media(max-width:1244px){
+    .btn-plata{
+        top: 5px;
+    }
+}
+@media(max-width:930px){
+    .btn-plata{
+        top: 30px;
+    }
+}
+
+

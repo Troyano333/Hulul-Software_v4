@@ -1,0 +1,211 @@
+body {
+    /* Considera un fondo oscuro general si va con tu tema. Ejemplo:
+            background-color: #121212; 
+            color: #e0e0e0; 
+            */
+}
+
+/* ESTILOS MEJORADOS PARA MODAL DE SELECCIÓN DE PAGO */
+#paymentMethodModal .modal-content {
+    background: linear-gradient(145deg, #232323, #383838);
+    /* Gradiente sutil */
+    color: #f0f0f0;
+    border-radius: 12px;
+    border: 1px solid #555;
+    /* Borde más definido */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    /* Sombra más pronunciada */
+}
+
+#paymentMethodModal .modal-header {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Cabecera semi-transparente */
+    border-bottom: 1px solid #5a5a5a;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#paymentMethodModal .modal-title {
+    color: #ffffff;
+    font-weight: 600;
+    /* Ligeramente más grueso */
+    text-shadow: 0 0 5px rgba(0, 195, 255, 0.5);
+    /* Sombra de texto neón sutil */
+}
+
+#paymentMethodModal .modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+}
+
+#paymentMethodModal .modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+#paymentMethodModal .modal-body {
+    padding: 1.5rem 2rem;
+}
+
+#paymentMethodModal .modal-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #5a5a5a;
+    padding: 1rem 1.5rem;
+    /* justify-content: center; Ya no es necesario con justify-content-between */
+}
+
+/* Se eliminó .btn-secondary específico para el modal de pago, se usará el botón de modificar reserva */
+.modal-logo {
+    max-height: 35px;
+    margin-right: 12px;
+    border-radius: 4px;
+}
+
+#paymentMethodModal hr {
+    border-top: 1px solid #666;
+}
+
+#paymentMethodModal #modalTotalPrice {
+    color: #00e1ff;
+    font-size: 1.8em;
+    /* Más grande para el precio */
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 225, 255, 0.7);
+}
+
+#paypal-button-container-modal {
+    margin-top: 15px;
+    /* Reducido un poco */
+    padding: 15px;
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 8px;
+}
+
+#paymentMethodModal h6 {
+    /* Títulos dentro del modal de pago */
+    color: #00c3ff;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+#paymentMethodModal .small strong {
+    color: #cccccc;
+}
+
+#paymentMethodModal .small span {
+    color: #f0f0f0;
+}
+
+
+/* ESTILOS PROFESIONALES PARA NOTIFICACIONES TOAST */
+.toast-container {
+    z-index: 1095;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+}
+
+.toast {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    opacity: 0.97;
+    width: 380px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.toast-header {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-bottom: 1px solid #404040;
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.toast-header .btn-close {
+    /* Ya incluye btn-close-white en el JS */
+    /* filter: invert(1) grayscale(100%) brightness(150%); */
+    /* Redundante si se usa btn-close-white */
+    opacity: 0.7;
+}
+
+.toast-header .btn-close:hover {
+    opacity: 1;
+}
+
+.toast-body {
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.toast-logo {
+    max-height: 22px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.toast-title-text {
+    font-weight: 600;
+    font-size: 1.05em;
+    vertical-align: middle;
+}
+
+/* Colores específicos para Toast (más intensos y con mejor contraste) */
+.toast.success {
+    background-color: #1a311e;
+}
+
+.toast.success .toast-header {
+    background-color: #22442a;
+    color: #50ff70;
+}
+
+.toast.success .toast-body {
+    color: #c8ffd4;
+}
+
+.toast.error {
+    background-color: #3a1a1d;
+}
+
+.toast.error .toast-header {
+    background-color: #5c2328;
+    color: #ff5050;
+}
+
+.toast.error .toast-body {
+    color: #ffd4d4;
+}
+
+.toast.warning {
+    background-color: #3a321a;
+}
+
+.toast.warning .toast-header {
+    background-color: #5c4b23;
+    color: #ffc107;
+}
+
+.toast.warning .toast-body {
+    color: #fff5d4;
+}
+
+.toast.info {
+    background-color: #1a2c3a;
+}
+
+.toast.info .toast-header {
+    background-color: #233e5c;
+    color: #00b8ff;
+}
+
+.toast.info .toast-body {
+    color: #d4f0ff;
+}

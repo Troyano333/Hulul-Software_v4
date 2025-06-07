@@ -1,0 +1,124 @@
+
+        /* Estilos Mejorados para la Política de Privacidad (mueve a tu archivo CSS) */
+        body {
+            background-color: #f8f9fa; /* Fondo suave y neutro */
+            font-family: 'Poppins', sans-serif; /* Coherencia con tu fuente principal */
+            color: #333; /* Color de texto principal */
+            padding-top: 2rem; /* Espacio superior */
+            padding-bottom: 3rem; /* Espacio inferior */
+        }
+
+        .policy-header {
+            background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%); /* Fondo oscuro elegante */
+            color: #FFA725; /* Tu color naranja/dorado principal */
+            padding: 3rem 1.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .policy-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem; /* Tamaño del título principal */
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+         .policy-header h1 .bi {
+            font-size: 2.6rem;
+            margin-right: 0.75rem;
+            vertical-align: middle;
+        }
+        .policy-header p.lead { /* Subtítulo o descripción corta */
+            font-size: 1.15rem;
+            color: #e0e0e0;
+            margin-bottom: 0;
+        }
+
+        .policy-container { /* Contenedor principal del contenido de la política */
+            background-color: #ffffff;
+            padding: 2.5rem; /* Buen padding interno */
+            border-radius: 0.75rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.07);
+        }
+
+        .policy-container h2 {
+            color: #FFA725; /* Tu color principal para los subtítulos */
+            font-weight: 600; /* Un poco menos bold que h1 */
+            font-size: 1.75rem; /* Tamaño para los H2 */
+            margin-top: 2.5rem; /* Espacio antes de cada sección */
+            margin-bottom: 1rem; /* Espacio después del H2 */
+            padding-bottom: 0.5rem; /* Espacio para la línea inferior */
+            border-bottom: 2px solid #ffe0b3; /* Línea divisoria naranja claro */
+        }
+        .policy-container h2:first-of-type {
+            margin-top: 0; /* Sin margen superior para el primer H2 */
+        }
+
+        .policy-container p,
+        .policy-container ul li {
+            color: #515151; /* Color de tus párrafos generales */
+            font-size: 1rem; /* Tamaño de texto estándar */
+            line-height: 1.8; /* Buen interlineado para legibilidad */
+            margin-bottom: 1rem; /* Espacio entre párrafos/items de lista */
+        }
+
+        .policy-container ul {
+            padding-left: 1.5rem; /* Indentación estándar para listas */
+        }
+        .policy-container ul li::marker { /* Estilo para los bullets de la lista */
+            color: #FFA725;
+        }
+
+        .policy-container strong {
+            color: #343a40; /* Resaltar texto importante */
+        }
+        .policy-container a { /* Estilo para enlaces dentro del texto */
+            color: #e68900; /* Naranja más oscuro para enlaces */
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .policy-container a:hover {
+            color: #FFA725;
+            text-decoration: underline;
+        }
+        
+        .btn-back-custom { /* Botón de volver, estilo consistente */
+            display: inline-block;
+            font-weight: 700;
+            color: black; 
+            background-color: #FFA725; 
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid #FFA725; 
+            padding: 0.75rem 1.75rem; 
+            font-size: 1rem;
+            text-transform: uppercase; 
+            border-radius: 50px; 
+            text-decoration: none;
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(255, 167, 37, 0.35); 
+        }
+        .btn-back-custom:hover {
+            color: white; 
+            background-color: #e68900; 
+            border-color: #e68900;
+            transform: translateY(-2px) scale(1.03); 
+            box-shadow: 0 6px 20px rgba(255, 167, 37, 0.45);
+        }
+        .btn-back-custom .bi { 
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+            vertical-align: text-bottom;
+        }
+
+        /* Media query para mejorar la lectura en pantallas muy anchas */
+        @media (min-width: 992px) {
+            .policy-container {
+                max-width: 800px; /* Limita el ancho del contenido para no ser demasiado extenso */
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    

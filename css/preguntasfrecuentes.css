@@ -1,0 +1,163 @@
+
+        /* Estilos adicionales y mejoras (mueve estas reglas a tu archivo preguntasfrecuentes.css) */
+        body {
+            background-color: #f4f5f7; /* Un gris muy claro y suave */
+            font-family: 'Poppins', sans-serif; 
+            color: #333;
+        }
+
+        .faq-header {
+            background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%);/* Gradiente sutil para el fondo oscuro */
+            color: #FFA725; 
+            padding: 3rem 1.5rem; /* Más padding vertical */
+            margin-bottom: 2.5rem; /* Más espacio antes del contenido */
+            border-radius: 0.75rem; /* Bordes más redondeados */
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .faq-header h1 {
+            font-weight: 700; /* Un poco más bold */
+            font-size: 3rem; 
+            margin-bottom: 0.75rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra de texto sutil */
+        }
+        .faq-header h1 .bi { /* Estilo para el icono en el h1 */
+            font-size: 2.8rem;
+            margin-right: 0.5rem;
+            vertical-align: middle; /* Alinear mejor el icono */
+        }
+        .faq-header p {
+            font-size: 1.15rem; /* Ligeramente más grande */
+            color: #e0e0e0; /* Un gris más claro para el subtítulo */
+            margin-bottom: 0;
+        }
+
+        .faq-container { 
+            background-color: #ffffff;
+            padding: 2.5rem; /* Más padding interno */
+            border-radius: 0.75rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.07); 
+            margin-top: -2rem; /* Solapamiento sutil con el header */
+            position: relative;
+            z-index: 10;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem; /* Más espacio entre items */
+            border-radius: 0.5rem; 
+            overflow: hidden; 
+            border: 1px solid #dee2e6; /* Borde sutil para cada item */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+        .accordion-item:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .accordion-button {
+            font-weight: 600;
+            font-size: 1.05rem; /* Ligeramente más grande */
+            color: #495057; /* Un gris oscuro para la pregunta */
+            background-color: #f8f9fa; /* Fondo muy claro para el botón */
+            border-bottom: 1px solid #dee2e6; /* Línea divisoria */
+            padding: 1.25rem 1.5rem; /* Más padding */
+        }
+        .accordion-button:hover {
+            background-color: #f1f3f5; /* Cambio sutil al hacer hover */
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #000; 
+            background-color: #fff5e4; 
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .05);
+            border-bottom-color: #FFA725 !important; 
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 167, 37, 0.35); 
+            border-color: #FFA725;
+            z-index: 3; /* Para que el foco se vea bien */
+        }
+
+        .accordion-button::after { 
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFA725'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            transition: transform .2s ease-in-out; /* Transición suave para el icono */
+        }
+         .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFA725'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            transform: rotate(-180deg);
+        }
+
+        .accordion-body {
+            background-color: #fff;
+            padding: 1.5rem; /* Buen padding para la respuesta */
+            font-size: 1rem; /* Tamaño de fuente cómodo */
+            color: #515151; 
+            line-height: 1.75; /* Mejor interlineado */
+            border-top: none; /* El borde ya está en el botón */
+        }
+        .accordion-body strong {
+            color: #343a40; /* Hacer los 'strong' un poco más oscuros */
+        }
+
+        .contact-info-faq {
+            text-align: center;
+            margin-top: 3rem; /* Más espacio superior */
+            padding: 2rem; /* Más padding */
+            background-color: #fff9f0; /* Un color crema muy suave */
+            border-radius: 0.5rem;
+            border: 1px solid #ffe0b3; /* Borde naranja muy claro */
+        }
+        .contact-info-faq p {
+            margin-bottom: 0.75rem; /* Ajuste de margen */
+            color: #515151;
+            font-size: 1rem;
+        }
+        .contact-info-faq .bi { /* Estilo para los iconos en contacto */
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .contact-info-faq strong {
+            color: #333;
+        }
+        .contact-info-faq a {
+            color: #e68900; /* Un naranja más oscuro para enlaces, mejor contraste */
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .contact-info-faq a:hover {
+            color: #FFA725;
+            text-decoration: underline;
+        }
+
+        .btn-back-custom { 
+            display: inline-block;
+            font-weight: 700; /* Más bold */
+            color: black; 
+            background-color: #FFA725; 
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid #FFA725; /* Borde del mismo color */
+            padding: 0.75rem 1.75rem; /* Padding ajustado */
+            font-size: 1rem;
+            text-transform: uppercase; /* Como tu .btn-nav */
+            border-radius: 50px; /* Muy redondeado */
+            text-decoration: none;
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(255, 167, 37, 0.35); 
+        }
+        .btn-back-custom:hover {
+            color: white; 
+            background-color: #e68900; /* Naranja más oscuro al hacer hover */
+            border-color: #e68900;
+            transform: translateY(-2px) scale(1.03); /* Efecto sutil de levantamiento */
+            box-shadow: 0 6px 20px rgba(255, 167, 37, 0.45);
+        }
+        .btn-back-custom .bi { /* Icono en el botón */
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+            vertical-align: text-bottom;
+        }
+
+  
