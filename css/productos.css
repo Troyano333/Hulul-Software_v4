@@ -234,3 +234,22 @@ body {
             color: white;
         }
    
+/* Agregamos un estilo para el desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Agregamos padding-top solo en pantallas móviles donde el navbar es visible */
+        @media (max-width: 991.98px) {
+            body {
+                padding-top: 70px; 
+            }
+        }
+
+        /* Estilo para que las imágenes de los productos sean responsivas y uniformes */
+        .product-card .card-img-top {
+            width: 100%;
+            height: 200px; /* Altura fija para todas las imágenes */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+        }
+    </style>

@@ -11,26 +11,8 @@
     
     <link rel="stylesheet" href="./css/productos.css">
     <link rel="icon" href="./img/h.png" type="image/png" />
-    <style>
-        /* Agregamos un estilo para el desplazamiento suave */
-        html {
-            scroll-behavior: smooth;
-        }
+    
 
-        /* Agregamos padding-top solo en pantallas móviles donde el navbar es visible */
-        @media (max-width: 991.98px) {
-            body {
-                padding-top: 70px; 
-            }
-        }
-
-        /* Estilo para que las imágenes de los productos sean responsivas y uniformes */
-        .product-card .card-img-top {
-            width: 100%;
-            height: 200px; /* Altura fija para todas las imágenes */
-            object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-        }
-    </style>
 </head>
 
 <body>
@@ -58,10 +40,7 @@
                         <a class="nav-link" href="#tequilas">Tequilas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#micheladas">Micheladas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#comida-colombiana">Comida Colombiana</a>
+                        <a class="nav-link" href="#comida-colombiana">Picadas</a>
                     </li>
                 </ul>
             </div>
@@ -215,7 +194,7 @@
                 </div>
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Miller+Lite" class="card-img-top" alt="Miller Lite" >
+                        <img src="./img_licores/Miller Lite.jfif" class="card-img-top" alt="Miller Lite" >
                         <div class="card-body">
                             <h5 class="card-title">Miller Lite</h5>
                             <p class="card-text price">$</p>
@@ -231,7 +210,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Don+Julio" class="card-img-top" alt="Don Julio (Blanco, Reposado, Añejo)">
+                        <img src="./img_licores/Don Julio.webp" class="card-img-top" alt="Don Julio (Blanco, Reposado, Añejo)">
                         <div class="card-body">
                             <h5 class="card-title">Don Julio (Blanco, Reposado, Añejo)</h5>
                             <p class="card-text price">$</p>
@@ -240,7 +219,7 @@
                 </div>
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=José+Cuervo" class="card-img-top" alt="José Cuervo (Especial Silver, Especial Gold)">
+                        <img src="./img_licores/José Cuervo.webp" class="card-img-top" alt="José Cuervo (Especial Silver, Especial Gold)">
                         <div class="card-body">
                             <h5 class="card-title">José Cuervo (Especial Silver, Especial Gold)</h5>
                             <p class="card-text price">$</p>
@@ -249,7 +228,7 @@
                 </div>
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Patrón+Silver" class="card-img-top" alt="Patrón Silver">
+                        <img src="./img_licores/Patrón Silver.webp" class="card-img-top" alt="Patrón Silver">
                         <div class="card-body">
                             <h5 class="card-title">Patrón Silver</h5>
                             <p class="card-text price">$</p>
@@ -258,7 +237,7 @@
                 </div>
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=1800+Silver" class="card-img-top" alt="1800 Silver">
+                        <img src="./img_licores/1800 Silver.webp" class="card-img-top" alt="1800 Silver">
                         <div class="card-body">
                             <h5 class="card-title">1800 Silver</h5>
                             <p class="card-text price">$</p>
@@ -268,94 +247,44 @@
             </div>
         </section>
 
-        <!-- Sección de Micheladas Especiales -->
-        <section class="product-category" id="micheladas">
-            <h2 class="product-category-title"><i class="bi bi-emoji-sunglasses-fill"></i> Micheladas Especiales</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                <div class="col">
-                    <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Michelada+Clásica" class="card-img-top" alt="Michelada Clásica Hulul (Limón y Sal)">
-                        <div class="card-body">
-                            <h5 class="card-title">Michelada Clásica Hulul (Limón y Sal)</h5>
-                            <p class="card-text price">$</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Michelada+Mango" class="card-img-top" alt="Michelada Mango Biche">
-                        <div class="card-body">
-                            <h5 class="card-title">Michelada Mango Biche</h5>
-                            <p class="card-text price">$</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Michelada+Maracuyá" class="card-img-top" alt="Michelada Maracuyá">
-                        <div class="card-body">
-                            <h5 class="card-title">Michelada Maracuyá</h5>
-                            <p class="card-text price">$</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Michelada+Cubana" class="card-img-top" alt="Michelada Cubana">
-                        <div class="card-body">
-                            <h5 class="card-title">Michelada Cubana</h5>
-                            <p class="card-text price">$</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Michelada+Roka+Fría" class="card-img-top" alt="Michelada Roka Fría (Especial de la Casa)">
-                        <div class="card-body">
-                            <h5 class="card-title">Michelada Roka Fría (Especial de la Casa)</h5>
-                            <p class="card-text price">$</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    
 
         <!-- Sección de Comida Colombiana -->
         <section class="product-category" id="comida-colombiana">
-            <h2 class="product-category-title"><i class="bi bi-egg-fried"></i> Comida Típica Colombiana</h2>
+            <h2 class="product-category-title"><i class="bi bi-egg-fried"></i> Picadas</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Bandeja+Paisa" class="card-img-top" alt="Bandeja Paisa">
+                        <img src="./img_licores/picada.png" class="card-img-top" alt="Bandeja Paisa">
                         <div class="card-body">
-                            <h5 class="card-title">Bandeja Paisa</h5>
+                            <h5 class="card-title">Picada De Res</h5>
                             <p class="card-text price">$</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Ajiaco" class="card-img-top" alt="Ajiaco Santafereño">
+                        <img src="./img_licores/chicharron.jpg" class="card-img-top" alt="Ajiaco Santafereño">
                         <div class="card-body">
-                            <h5 class="card-title">Ajiaco Santafereño</h5>
+                            <h5 class="card-title">Picada De Chicharron</h5>
                             <p class="card-text price">$</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Empanadas" class="card-img-top" alt="Empanadas Colombianas">
+                        <img src="./img_licores/costeña.webp" class="card-img-top" alt="Empanadas Colombianas">
                         <div class="card-body">
-                            <h5 class="card-title">Empanadas (Carne/Pollo)</h5>
+                            <h5 class="card-title">Picada Costeña</h5>
                             <p class="card-text price">$</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card product-card">
-                        <img src="https://placehold.co/300x200/333/fff?text=Arepa+con+Todo" class="card-img-top" alt="Arepa con Todo">
+                        <img src="./img_licores/paisa.jpg" class="card-img-top" alt="Arepa con Todo">
                         <div class="card-body">
-                            <h5 class="card-title">Arepa con Todo</h5>
+                            <h5 class="card-title">Picada Paisa</h5>
                             <p class="card-text price">$</p>
                         </div>
                     </div>
