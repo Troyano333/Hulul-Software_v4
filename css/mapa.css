@@ -181,11 +181,11 @@
             visibility: visible; 
         }
         /* Posicionamiento de las zonas (se mantienen tus porcentajes originales) */
-        #palco-vip { top: 22%; left: 25%; } #mesa-vip { top: 21%; left: 75%; }
-        #palco-plata { top: 26%; left: 21%; } #mesa-plata { top: 24%; left: 78%; }
-        #palco-bronce { top: 31%; left: 21%; } #mesa-bronce { top: 29%; left: 79%; }
-        #vip-rojo { top: 37%; left: 21%; } #plata-rojo { top: 42%; left: 23%; }
-        #mesavip-rojo { top: 35%; left: 79%; } #mesaplata-rojo { top: 40%; left: 79%; }
+        #palco-vip { top: 26%; left: 25%; } #mesa-vip { top: 21%; left: 75%; }
+        #palco-plata { top: 32%; left: 21%; } #mesa-plata { top: 24%; left: 78%; }
+        #palco-bronce { top: 40%; left: 21%; } #mesa-bronce { top: 29%; left: 79%; }
+        #vip-rojo { top: 49%; left: 21%; } #plata-rojo { top: 57%; left: 23%; }
+        #mesavip-rojo { top: 59%; left: 79%; } #mesaplata-rojo { top: 40%; left: 79%; }
 
         .btn-back-custom {
             display: inline-block; font-weight: 700; color: black; background-color: #FFA725; 

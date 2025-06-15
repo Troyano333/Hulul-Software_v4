@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Realizar Reserva - Discoteca Hulul</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/realizar_reservas.css" />
     <link rel="stylesheet" href="./css/paypal.css">
-    <link rel="icon" href="./img/h.png" type="image/png" />      
+    <link rel="icon" href="./img/h.png" type="image/png" />
+    <!-- Librería MD5 para firma PayU -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
 </head>
 
 <body>
-    <!-- CONTENEDOR PARA TOASTS (Notificaciones) -->
     <div aria-live="polite" aria-atomic="true" class="position-relative">
-        <div id="toastPlacement" class="toast-container position-fixed top-0 end-0 p-3 pt-5"> 
-            <!-- Los toasts se añadirán aquí por JavaScript -->
-        </div>
+        <div id="toastPlacement" class="toast-container position-fixed top-0 end-0 p-3 pt-5"></div>
     </div>
 
     <div class="reservas-page-header">
@@ -30,7 +29,8 @@
     <div class="container reservas-section-wrapper">
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-12 mb-4 mb-lg-0">
-                 <div class="carousel-showcase"> 
+                <!-- Carrusel original SIN BORRAR -->
+                <div class="carousel-showcase">
                     <div class="carousel-3d-container">
                         <div class="carousel-3d-scene">
                             <div class="carousel-3d-item">
@@ -64,6 +64,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Fin carrusel -->
             </div>
             <div class="col-lg-7 col-md-12">
                 <div class="form-reservas-container">
@@ -81,7 +82,6 @@
                                     placeholder="Ingresa tu apellido" />
                             </div>
                         </div>
-
                         <div class="input-row">
                             <div>
                                 <label for="email" class="form-label">Correo Electrónico</label>
@@ -94,15 +94,13 @@
                                     placeholder="Ej: 3001234567" />
                             </div>
                         </div>
-
                         <div class="input-row">
-                            <div class="full-width-field"> <label for="eventoSeleccionado" class="form-label">Evento
-                                    Seleccionado</label>
+                            <div class="full-width-field">
+                                <label for="eventoSeleccionado" class="form-label">Evento Seleccionado</label>
                                 <input type="text" class="form-control" name="eventoSeleccionado"
                                     id="eventoSeleccionado" readonly />
                             </div>
                         </div>
-
                         <div class="input-row">
                             <div>
                                 <label for="zonaSeleccionada" class="form-label">Zona Elegida (Palco o Mesa)</label>
@@ -114,7 +112,6 @@
                                 <input type="text" class="form-control" name="precioZona" id="precioZona" readonly />
                             </div>
                         </div>
-
                         <div class="input-row">
                             <div>
                                 <label for="fechaEvento" class="form-label">Fecha del Evento</label>
@@ -125,7 +122,6 @@
                                 <input type="text" class="form-control" name="horaEvento" id="horaEvento" readonly />
                             </div>
                         </div>
-
                         <div class="input-row">
                             <div class="full-width-field">
                                 <label for="lugar" class="form-label">Lugar de Preferencia (Si aplica)</label>
@@ -137,8 +133,9 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-reservar-custom"><i
-                                class="bi bi-check-circle-fill"></i> Confirmar Reserva y Pagar</button>
+                        <button type="submit" class="btn btn-reservar-custom">
+                            <i class="bi bi-check-circle-fill"></i> Confirmar Reserva y Pagar
+                        </button>
                     </form>
                 </div>
             </div>
@@ -149,7 +146,7 @@
         </div>
     </div>
 
-    <!-- MODAL DE SELECCIÓN DE PAGO (Mantenido pero con estilos mejorados) -->
+    <!-- MODAL DE MÉTODOS DE PAGO -->
     <div class="modal fade" id="paymentMethodModal" tabindex="-1" aria-labelledby="paymentMethodModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -163,37 +160,50 @@
                     <div class="row">
                         <div class="col-md-6 mb-4 mb-md-0 border-end border-secondary pe-md-4">
                             <h6 class="mb-3">Resumen de tu Reserva:</h6>
-                            <p class="mb-1 small"><strong>Evento:</strong> <span id="summaryEvento" class="text-light"></span></p>
-                            <p class="mb-1 small"><strong>Zona:</strong> <span id="summaryZona" class="text-light"></span></p>
-                            <p class="mb-3 small"><strong>Fecha:</strong> <span id="summaryFecha" class="text-light"></span></p>
+                            <p class="mb-1 small"><strong>Evento:</strong> <span id="summaryEvento"
+                                    class="text-light"></span></p>
+                            <p class="mb-1 small"><strong>Zona:</strong> <span id="summaryZona"
+                                    class="text-light"></span>
+                            </p>
+                            <p class="mb-3 small"><strong>Fecha:</strong> <span id="summaryFecha"
+                                    class="text-light"></span></p>
                             <hr class="my-3">
                             <p class="text-center mb-1">Total a Pagar:</p>
                             <p class="text-center"><strong id="modalTotalPrice" class="h2">Cargando...</strong></p>
                         </div>
-                        <div class="col-md-6 ps-md-4">
-                             <h6 class="mb-3">Selecciona tu Método de Pago:</h6>
-                            <div id="paypal-button-container-modal" class="text-center">
-                                <!-- Los botones de PayPal se renderizarán aquí -->
-                            </div>
-                             <!-- Aquí podrías añadir otros métodos de pago como botones estilizados -->
+                        <div class="col-md-6 ps-md-4 d-flex flex-column justify-content-center">
+                            <h6 class="mb-3 text-center">Selecciona tu Método de Pago:</h6>
+                            <!-- CONTENEDOR PAYPAL ORIGINAL (NO TOCAR) -->
+                            <div id="paypal-button-container-modal" class="text-center mb-3"></div>
+                            <!-- BOTÓN PAYU NUEVO -->
+                            <div id="payu-button-container" class="text-center mb-3"></div>
+                            <!-- Pagar en sitio -->
+
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between px-4 pb-3">
-                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-dismiss="modal"><i class="bi bi-arrow-left-short"></i> Modificar Datos</button>
-                    <!-- Botón de cancelar selección eliminado para simplificar, ya que el modal se cierra con X o ESC -->
+                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-dismiss="modal"><i
+                            class="bi bi-arrow-left-short"></i> Modificar Datos</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- FIN MODAL SELECCIÓN PAGO -->
 
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <!-- SDK PAYPAL ORIGINAL (NO TOCAR) -->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AUz_JSeupSy8lcj7LWQB9HPZ6PMZsEPJpbDGxzPycCoB9PqJBxZEmGuJw0ivc98HvEgCFdua09wrxDvk&currency=USD&disable-funding=credit,card"
+        data-sdk-integration-source="developer-studio"></script>
+
     <script src="js/paypal.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AUz_JSeupSy8lcj7LWQB9HPZ6PMZsEPJpbDGxzPycCoB9PqJBxZEmGuJw0ivc98HvEgCFdua09wrxDvk&currency=USD&disable-funding=credit,card" data-sdk-integration-source="developer-studio"></script>
-    
+
+    <script src="./formulario_reservas.js"></script>
+
+    <script src="./js/payu.js"></script>
 
 </body>
+
 </html>

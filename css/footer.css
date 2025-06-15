@@ -1,85 +1,71 @@
 .footer {
-    padding: 20px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #F5EEDC;
-    border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgba(234, 239, 243, 0.7); /* Fondo más suave */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más intensa */
-    width: 250px; /* Ajustado para mejor distribución */
-    padding: 20px;
-    border-radius: 10px; /* Bordes redondeados */
-    transition: transform 0.3s ease;
-}
-
-/* Efecto de hover en el contenedor de enlaces */
-.link:hover {
-    transform: translateY(-5px); /* Desplazamiento sutil al pasar el mouse */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
-}
-
-.link h3 {
-    font-size: 18px;
-    color: #FFA725;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    text-align: center;
-    position: relative;
-    font-weight: bold;
-    letter-spacing: 1px; /* Espaciado entre letras */
-}
-
-/* Estilo de los enlaces */
-.link a {
-    font-size: 17px;
-    color: #181818;
-    display: block;
-    padding: 8px 0;
-    transition: all 0.3s ease; /* Transición suave */
-    font-weight: 500;
-    text-align: center;
-}
-
-.link a:hover {
-    color: rgb(248, 179, 3);
-    text-decoration: underline; /* Subrayado al hacer hover */
-    transform: scale(1.05); /* Efecto de escala */
-}
-
-/* Títulos dentro de la clase .redes */
-.redes h3 {
-    position: relative;
-    left: 3px;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-    .footer {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0;
+      background: var(--secondary-color);
+      color: var(--footer-text-color);
+      padding-top: 5rem;
+    }
+    .footer .footer-top {
+        padding-bottom: 3rem;
+    }
+    .footer .footer-logo .logo{
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--white);
+        text-decoration: none;
+    }
+    .footer .footer-logo .logo .hu{
+        color: var(--primary-color);
+    }
+    .footer .footer-about p{
+        margin-top: 1rem;
+    }
+    .footer .link h3 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    .footer .link a {
+      color: var(--footer-text-color);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .footer .link a:hover {
+      color: var(--primary-color);
+      transform: translateX(5px);
+    }
+    
+    .footer-social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--dark-gray);
+        color: var(--white);
+        text-decoration: none;
+        margin-right: 0.5rem;
+        transition: all 0.3s ease;
+    }
+    .footer-social-icons a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-3px);
     }
 
-    .link {
-        width: 100%;
-        margin-bottom: 15px;
+    .footer .footer-copyright-text {
+        padding: 2rem 0;
+        margin-top: 3rem;
+        border-top: 1px solid #495057;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+/* PARRAFO DE ABAJO */
+    p,li,a {
+        color: white;
     }
 
-    .link h3 {
-        font-size: 16px;
+    .ka{
+        color: #e68900;
     }
-
-    .link a {
-        font-size: 16px;
-    }
-}

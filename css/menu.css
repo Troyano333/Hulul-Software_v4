@@ -22,7 +22,7 @@
 
     .btn-nav{
       width: 90px;
-      padding: 2px 20px;
+      padding: 5px 60px;
       background-color: transparent;
       color: goldenrod;
       position: relative;
@@ -30,6 +30,7 @@
       font-weight: bold;
       display: block;
       top: 10px;
+      margin-bottom: 40px;
     }
 
     .menu .navbar {
@@ -39,6 +40,7 @@
       right: 0;
       background-color: rgb(52, 56, 56);  
       display: none;
+      
       
     
       
@@ -58,7 +60,7 @@
     
     }
     .menu .navbar ul li a{
-        color: goldenrod;
+        color: goldenrod !important
         
     }
     .menu .navbar ul li a:hover{

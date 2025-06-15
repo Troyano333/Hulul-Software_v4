@@ -86,3 +86,47 @@ Zona reservada: ${datos.zona || "No disponible"}`;
                  document.getElementById("qr_imagen").alt = "No se pudieron cargar los datos para el QR";
             }
         });
+
+
+        // Pega esto en confirmacion.js
+function getParams() {
+    const params = {};
+    if(window.location.search) {
+        const query = window.location.search.substring(1);
+        const vars = query.split('&');
+        for (let i = 0; i < vars.length; i++) {
+            const pair = vars[i].split('=');
+            params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+        }
+    }
+    return params;
+}
+const datos = getParams();
+
+function estadoPayu(estado) {
+    switch(estado) {
+        case "4": return '<span class="badge badge-success">Aprobada</span>';
+        case "6": return '<span class="badge badge-danger">Rechazada</span>';
+        case "104": return '<span class="badge badge-warning">Error</span>';
+        case "7": return '<span class="badge badge-warning">Pendiente</span>';
+        default: return '<span class="badge badge-secondary">Desconocido</span>';
+    }
+}
+
+let html = '';
+if(Object.keys(datos).length > 0) {
+    html += `<h3>¡Gracias por tu reserva!</h3>`;
+    html += `<p>Estado de la transacción: ${estadoPayu(datos.transactionState || '')}</p>`;
+    html += `<ul class="list-group mt-3">
+        <li class="list-group-item bg-dark text-light"><strong>Referencia:</strong> ${datos.referenceCode || '-'}</li>
+        <li class="list-group-item bg-dark text-light"><strong>Descripción:</strong> ${datos.description || '-'}</li>
+        <li class="list-group-item bg-dark text-light"><strong>Valor pagado:</strong> $${datos.TX_VALUE || datos.value || '-'}</li>
+        <li class="list-group-item bg-dark text-light"><strong>Método de pago:</strong> ${datos.lapPaymentMethod || '-'}</li>
+        <li class="list-group-item bg-dark text-light"><strong>Fecha de pago:</strong> ${datos.processingDate || '-'}</li>
+        <li class="list-group-item bg-dark text-light"><strong>Número de orden:</strong> ${datos.transactionId || datos.orderId || '-'}</li>
+    </ul>`;
+    html += `<p class="mt-3 small">Si tienes dudas, contáctanos con tu número de referencia.<br>¡Nos vemos en la fiesta!</p>`;
+} else {
+    html = '<p class="text-warning">No se encontraron datos de pago. Si realizaste el pago, por favor revisa tu correo o contacta al soporte.</p>';
+}
+document.getElementById('resumen_pago').innerHTML = html;

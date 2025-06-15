@@ -442,6 +442,7 @@ h1 { /* Estilos del título principal */
         .form-reservas-container .form-control,
         .form-reservas-container .form-select { /* Estilo para inputs y selects */
             border-radius: 0.375rem; 
+            
             border: 1px solid #ced4da;
             padding: 0.75rem 1rem;
             transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -536,3 +537,37 @@ h1 { /* Estilos del título principal */
             .carousel-showcase, .form-reservas-container { padding: 1.5rem; }
             .btn-reservar-custom { padding: 0.75rem 1.5rem; font-size: 1rem; }
         }
+/* === Estilos para el Botón de Pago en Sitio (Datáfono) === */
+.btn-dataphone-custom {
+    background-color: #343a40; /* Un color oscuro y elegante */
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid #23272b;
+    transition: all 0.25s ease-in-out;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    text-decoration: none; /* Asegurar que no haya subrayado si se usa una etiqueta <a> */
+    display: inline-block; /* Para que el padding y width funcionen correctamente */
+    text-align: center;
+}
+
+.btn-dataphone-custom:hover, .btn-dataphone-custom:focus {
+    background-color: #495057;
+    color: #ffffff;
+    border-color: #343a40;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-dataphone-custom .bi {
+    margin-right: 0.6rem;
+    vertical-align: -0.1em;
+    font-size: 1.1rem;
+}
+
+/* Ajustes en el modal para acomodar ambos botones */
+.modal-body .d-flex.flex-column {
+    gap: 0.75rem; /* Añade un espacio entre el contenedor de PayPal y el botón de datáfono */
+}

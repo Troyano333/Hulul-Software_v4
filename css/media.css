@@ -22,7 +22,8 @@ img {
     max-width: 1350px;
     margin: 0 auto;
     padding: 0 35px;
-    background-color: #FFF5E4;
+    
+    
 }
 
 /* Menú */
@@ -34,6 +35,15 @@ img {
     animation: fadeIn 1s ease-out; /* Agrega animación para el menú */
 }
 
+
+/* TEXTO DE INICIO Y ENLACES */
+.navbar a {
+    color: black!important
+
+}
+.navbar a:hover{
+    color: #FFA725!important
+}
 .logo {
     color: black;
     margin-left: -10px;
@@ -52,9 +62,12 @@ img {
     font-size: 35px;
 }
 
-.texto_hulu {
-    font-size: 18px;
+.texto_hulu{
+    font-size: 20px;
+    
 }
+
+
 
 .S {
     color: #FFA725;
@@ -127,6 +140,7 @@ img {
     justify-content: space-between;
     padding: 80px 0;
     animation: slideUp 0.5s ease-out; /* Animación para el contenido de la cabecera */
+    
 }
 
 .header-text {
@@ -135,6 +149,7 @@ img {
     position: relative;
     left: 35px;
     animation: fadeInUp 1s ease-out; /* Animación para el texto */
+    margin-top: 90px !important
 }
 
 .header-text p {
@@ -397,5 +412,25 @@ p {
       flex-direction: column;
       align-items: center;
       padding: 0;
+
+      
     }
+    .footer-logo{
+        position: relative;
+        left: 120px;
+    }
+    .footer-social-icons{
+        position: relative;
+        left: 100px; 
+    }
+    .link h3{
+        position: relative;
+        right: 160px;
+    }
+    .link {
+        position: relative;
+        left: 120px;
+       
+    }
+   
 }

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result && $result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        // Aquí validamos la contraseña (texto plano en tu caso)
+        // Aquí validamos la contraseña 
         if ($password === $user['contrasena']) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_email'] = $user['email'];

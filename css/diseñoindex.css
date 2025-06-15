@@ -1,0 +1,271 @@
+ /* --- Testimonios --- */
+ #testimonios .card-body {
+     position: relative;
+     padding-top: 2.5rem;
+ }
+
+ #testimonios .card-body::before {
+     content: '“';
+     position: absolute;
+     top: -10px;
+     left: 15px;
+     font-size: 4rem;
+     color: var(--primary-color);
+     font-weight: 800;
+     line-height: 1;
+ }
+
+ #testimonios .rounded-circle {
+     width: 80px;
+     height: 80px;
+     border: 3px solid var(--primary-color);
+     padding: 3px;
+ }
+
+ /* --- Suscripción --- */
+ #suscripcion .form-control {
+     padding: 0.8rem 1.5rem;
+ }
+
+ #suscripcion .form-control:focus {
+     border-color: var(--primary-color);
+     box-shadow: 0 0 0 0.25rem rgba(255, 167, 37, 0.35);
+ }
+
+ .subcr
+
+ /* --- Tarjetas informativas (Cómo reservar, Beneficios) --- */
+ .card-informativa {
+     padding: 2rem !important;
+ }
+
+ .card-informativa .icono-destacado {
+     font-size: 3rem;
+     color: var(--primary-color);
+     margin-bottom: 1rem;
+ }
+
+ .card-informativa .card-title {
+     font-size: 1.2rem;
+     margin-bottom: 0.5rem;
+ }
+
+ .card-informativa a {
+     color: var(--primary-color);
+     font-weight: 600;
+     text-decoration: none;
+ }
+
+ .card-informativa a:hover {
+     text-decoration: underline;
+ }
+
+
+ /* --- TARJETAS --- */
+ .card-hulul {
+     background-color: var(--white);
+     border-radius: 0.75rem !important;
+     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05) !important;
+     border: 1px solid var(--border-color) !important;
+     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+     height: 100%;
+ }
+
+ .card-hulul:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08) !important;
+ }
+
+ .card-hulul .card-body {
+     padding: 1.75rem;
+ }
+
+ .card-hulul .card-title {
+     font-weight: 700;
+     color: var(--dark-text);
+ }
+
+ .card-hulul .card-text {
+     color: var(--light-text);
+ }
+
+ .card-hulul .card-img-top {
+     border-top-left-radius: 0.75rem;
+     border-top-right-radius: 0.75rem;
+
+ }
+
+ .pesos {
+     color: black;
+ }
+
+ /* --- BOTONES EN GENERAL --- */
+ .btn-hulul {
+     font-weight: 700 !important;
+     padding: 0.8rem 1.8rem !important;
+     border-radius: 50px !important;
+     transition: all 0.3s ease-in-out !important;
+     text-transform: uppercase !important;
+     font-size: 0.9rem !important;
+     text-decoration: none !important;
+     display: inline-block !important;
+     text-align: center;
+     border: 2px solid transparent;
+     position: relative;
+     top: -10px;
+ }
+
+ /* BOTONES EN INICIAR SESION */
+ .boton-iniciar {
+     font-weight: 700 !important;
+     padding: 0.8rem 1.8rem !important;
+     border-radius: 50px !important;
+     transition: all 0.3s ease-in-out !important;
+     text-transform: uppercase !important;
+     font-size: 0.9rem !important;
+     text-decoration: none !important;
+     display: inline-block !important;
+     text-align: center;
+     border: 2px solid transparent;
+     position: relative;
+     top: -10px;
+    margin: 5px;
+ }
+
+ .btn-primary-hulul {
+     background-color: var(--primary-color) !important;
+     color: var(--secondary-color) !important;
+     border-color: var(--primary-color) !important;
+ }
+
+ .btn-primary-hulul:hover {
+     background-color: #e68900 !important;
+     border-color: #e68900 !important;
+     color: var(--white) !important;
+     transform: translateY(-3px) !important;
+     box-shadow: 0 6px 15px rgba(255, 167, 37, 0.4) !important;
+ }
+
+ .btn-secondary-hulul {
+     background-color: transparent !important;
+     color: var(--white) !important;
+     border-color: var(--white) !important;
+ }
+
+ .btn-secondary-hulul:hover {
+     background-color: var(--white) !important;
+     color: var(--secondary-color) !important;
+     transform: translateY(-3px) !important;
+     box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2) !important;
+ }
+
+ .navbar .btn-primary-hulul {
+     color: var(--secondary-color) !important;
+ }
+
+ .navbar .btn-primary-hulul:hover {
+     color: var(--white) !important;
+ }
+
+ .navbar .btn-nav {
+     margin-left: 10px;
+ }
+
+
+ :root {
+     --primary-color: #FFA725;
+     --secondary-color: #212529;
+     --dark-gray: #343a40;
+     --light-gray: #f8f9fa;
+     --dark-text: #333;
+     --light-text: #6c757d;
+     --white: #ffffff;
+     --border-color: #e9ecef;
+ }
+
+ body {
+     font-family: 'Poppins', sans-serif;
+     background-color: var(--white);
+     color: var(--dark-text);
+ }
+
+ /* --- ESTILOS DE SECCIÓN --- */
+ section {
+     padding: 5rem 0;
+ }
+
+ .section-bg {
+     background-color: var(--light-gray);
+ }
+
+ .titulo-seccion-dinamica {
+     font-weight: 800;
+     font-size: 2.5rem;
+     color: var(--dark-text);
+     margin-bottom: 1rem;
+     text-align: center;
+ }
+
+ .subtitulo-seccion {
+     text-align: center;
+     color: var(--light-text);
+     max-width: 600px;
+     margin: 0 auto 3rem auto;
+ }
+
+ .titulo-seccion-dinamica .highlight {
+     color: var(--primary-color);
+ }
+
+ /* --- HEADER --- */
+ .header {
+     background: var(--secondary-color);
+     padding-bottom: 3rem;
+     height: 100vh;
+ }
+
+ .header .contenedor {
+     position: relative;
+     z-index: 2;
+ }
+
+ .header::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 950px;
+     background: linear-gradient(160deg, var(--primary-color) 0%, var(--secondary-color) 60%);
+     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+ }
+
+ .header-content {
+     padding-top: 4rem;
+ }
+
+ .header-text h1 {
+     font-weight: 800;
+ }
+
+ .header-text h1 .hu {
+     color: var(--primary-color);
+ }
+
+ .header-img img {
+     max-width: 100%;
+     animation: floatAnimation 4s ease-in-out infinite;
+ }
+
+
+ @keyframes floatAnimation {
+
+     0%,
+     100% {
+         transform: translateY(0);
+     }
+
+     50% {
+         transform: translateY(-20px);
+     }
+ }

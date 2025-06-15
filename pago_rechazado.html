@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pago Rechazado - Hulul Discoteca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/pago_rechazado.css" />
+    <link rel="stylesheet" href="./css/realizar_reservas.css" /> <link rel="icon" href="./img/h.png" type="image/png" />
+</head>
+
+<body>
+    <div class="rejection-page-header">
+        <div class="container">
+            <h1><i class="bi bi-x-circle-fill"></i> ¡Pago No Completado!</h1>
+            <p class="lead" id="rejection-subtitle">Lo sentimos, no hemos podido procesar tu pago en este momento.</p>
+        </div>
+    </div>
+    <div class="container rejection-main-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="info-block rejection-details">
+                    <h2><i class="bi bi-exclamation-octagon-fill"></i> Detalles del Problema</h2>
+
+                    <div class="card bg-light border-dark text-dark my-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Intento de Reserva</h5>
+                            <p class="card-text mb-1"><strong>Evento:</strong> <span id="evento_rechazado">No disponible</span></p>
+                            <p class="card-text mb-0"><strong>Zona:</strong> <span id="zona_rechazada">No disponible</span></p>
+                        </div>
+                    </div>
+                    <p id="rejection-reason">Tu intento de reserva no se ha podido completar.</p>
+                    <hr>
+                    <p class="fw-bold">¿Qué puedes hacer?</p>
+                    <ul>
+                        <li>Verifica que los datos de tu método de pago sean correctos.</li>
+                        <li>Asegúrate de tener fondos suficientes en tu cuenta.</li>
+                        <li>Contacta a tu banco para asegurarte de que no haya bloqueos para compras en línea.</li>
+                        <li>Haz clic en "Volver a Intentarlo" para reingresar tus datos o elegir otro método de pago.</li>
+                    </ul>
+                </div>
+                 <div class="info-block text-center contact-support">
+                    <h2><i class="bi bi-headset"></i> ¿Necesitas Ayuda?</h2>
+                    <p>Si el problema persiste o tienes alguna duda, no dudes en contactarnos.</p>
+                    <p><strong>Teléfono:</strong> (350) 602-5335</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="formulario_reservas.html" class="btn-back-custom"><i class="bi bi-arrow-left-circle-fill"></i> Volver a Intentarlo</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            
+            // Obtener datos de la reserva desde la URL
+            const evento = params.get('evento');
+            const zona = params.get('zona');
+            const reason = params.get('reason');
+
+            // Poblar los detalles de la reserva que falló
+            if (evento) document.getElementById('evento_rechazado').textContent = evento;
+            if (zona) document.getElementById('zona_rechazada').textContent = zona;
+
+            // Personalizar el mensaje de error según la razón del fallo
+            const reasonSubtitle = document.getElementById('rejection-subtitle');
+            const reasonParagraph = document.getElementById('rejection-reason');
+
+            if (reason === 'cancelado_por_usuario') {
+                reasonSubtitle.textContent = 'Has cancelado el proceso de pago.';
+                reasonParagraph.textContent = 'Tu reserva no fue completada porque cerraste la ventana de pago. ¡No hay problema, puedes intentarlo de nuevo cuando quieras!';
+            } else if (reason === 'error_paypal' || reason === 'error_captura') {
+                reasonSubtitle.textContent = 'Hubo un error con la plataforma de pago.';
+                reasonParagraph.textContent = 'La plataforma de pago reportó un error y no se pudo completar la transacción. Por favor, verifica los pasos en la lista de abajo y vuelve a intentarlo.';
+            } else {
+                // Mensaje genérico si no hay una razón específica
+                reasonParagraph.textContent = 'Tu intento de reserva no se ha podido completar porque el pago fue rechazado o ocurrió un error inesperado.';
+            }
+        });
+    </script>
+    </body>
+</html>

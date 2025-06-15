@@ -1,0 +1,144 @@
+/* css/pago_pendiente.css */
+
+body {
+    background-color: #FFF5E4;
+}
+
+/* Estilos para el header de la página */
+.pending-page-header {
+    background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%);
+    color: #ffffff;
+    padding: 3rem 1.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+.pending-page-header h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.pending-page-header .lead {
+    font-size: 1.15rem;
+    color: #f0f0f0;
+}
+
+/* Contenedor principal y bloques de información */
+.pending-main-container {
+    padding: 1.5rem;
+}
+.info-block {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.07);
+    margin-bottom: 1.5rem;
+}
+.info-block h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.75rem;
+    color: #FFA725;
+}
+.info-block h2 .bi {
+    margin-right: 0.5rem;
+}
+.info-block p {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+.info-block p strong {
+    color: #343a40;
+}
+.payment-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.payment-icon {
+    font-size: 2.5rem;
+    color: #FFA725;
+}
+#atencion-qr h2 {
+    color: #ffc107;
+}
+
+/* --- SECCIÓN DEL MODAL (INTACTA, COMO PEDISTE) --- */
+/* Estilos específicos para el Modal de Resumen */
+#summaryModal .modal-content {
+    background-color: #212529; /* Fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
+    border: 1px solid #495057;
+    border-radius: 0.75rem;
+}
+#summaryModal .modal-header {
+    border-bottom: 1px solid #495057;
+    padding: 1rem 1.5rem;
+}
+#summaryModal .modal-logo {
+    height: 30px;
+    margin-right: 1rem;
+}
+#summaryModal .modal-title {
+    font-weight: 600;
+    color: #FFA725; /* Color acento */
+}
+#summaryModal .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Botón de cierre blanco */
+}
+#summaryModal .modal-body {
+    padding: 1.5rem 2rem;
+}
+#summaryModal .modal-body h6 {
+    color: #adb5bd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+#summaryModal .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+}
+#summaryModal .summary-item .label {
+    font-weight: 600;
+    color: #ced4da;
+}
+#summaryModal .summary-item .value {
+    color: #f8f9fa;
+}
+#summaryModal hr {
+    border-top: 1px solid #495057;
+}
+#summaryModal #modalSummaryPrecio {
+    color: #FFA725; /* Color acento para el precio */
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+#summaryModal .modal-footer {
+    border-top: 1px solid #495057;
+    justify-content: center;
+    padding: 1rem;
+}
+#summaryModal .btn-primary {
+  background-color: #FFA725;
+  color: black;
+  font-weight: 700;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  border: 1px solid #e68900;
+  transition: all 0.25s ease-in-out;
+}
+#summaryModal .btn-primary:hover {
+  background-color: gold;
+  color: white;
+  border-color: #e6b800;
+}
+
+/* CAMBIO: Regla añadida para cambiar a blanco el texto 'text-muted' dentro del modal */
+#summaryModal .text-muted {
+    color: #ffffff !important; /* !important asegura que sobreescriba el color gris de Bootstrap */
+}
