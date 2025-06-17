@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2025 a las 01:58:27
+-- Tiempo de generación: 17-06-2025 a las 07:54:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -20,21 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `trabajando_db`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `contacto`
---
-
-CREATE TABLE `contacto` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
-  `apellido` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `telefono` varchar(20) DEFAULT NULL,
-  `mensaje` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -68,7 +53,10 @@ INSERT INTO `eventos` (`id`, `nombre`, `descripcion`, `fecha`, `hora`, `lugar`, 
 (4, 'Maluma', 'Maluma llega a su ciudad natal con un espectáculo lleno de reguetón, luces y emoción que no te puedes perder.', '2025-08-30', '8:00 PM', 'Estadio Atanasio Girardot', 'Medellín', 'concierto', 'Mayores de 16 años', './img_eventos/maluma.webp', 1, '2025-06-01 04:23:41'),
 (5, 'Shakira', 'Shakira regresa a Barranquilla con su gira internacional, lista para hacer vibrar a su público con sus mayores éxitos.', '2025-09-05', '9:00 PM', 'Estadio Metropolitano', 'Barranquilla', 'concierto', 'Apto para todas las edades', './img_eventos/shakira.jpg', 1, '2025-06-01 04:23:41'),
 (6, 'DJ Dever', 'Vive una noche explosiva con DJ Dever mezclando en vivo sus mejores beats electrónicos y urbanos en Valledupar.', '2025-09-12', '10:00 PM', 'Parque de la Leyenda Vallenata', 'Valledupar', 'festival', 'Mayores de 18 años', './img_eventos/dj_dever.jfif', 1, '2025-06-01 04:23:41'),
-(7, 'Carlos Vives', 'Disfruta una velada mágica con Carlos Vives y su contagiosa mezcla de vallenato y pop colombiano en Bogotá.', '2025-09-20', '8:30 PM', 'Movistar Arena', 'Bogotá', 'concierto', 'Mayores de 14 años', './img_eventos/carlos_vives.jpg', 1, '2025-06-01 04:23:41');
+(7, 'Carlos Vives', 'Disfruta una velada mágica con Carlos Vives y su contagiosa mezcla de vallenato y pop colombiano en Bogotá.', '2025-09-20', '8:30 PM', 'Movistar Arena', 'Bogotá', 'concierto', 'Mayores de 14 años', './img_eventos/carlos_vives.jpg', 1, '2025-06-01 04:23:41'),
+(19, 'luis miguiel', 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm', '0000-00-00', '14:02', 'gran salon', 'Barranquilla', 'concierto', 'mayores de 18', './img_eventos/1748921364_20250530_1647_León en Fuego_remix_01jwhjj460e54s2a0s3e9vem0r.png', 0, '2025-06-03 03:29:24'),
+(20, 'tarjeta de debito', 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm', '1000-10-10', '10:10', 'gran salon', 'Medellín', 'concierto', 'mayores de 18', './img_eventos/1748921578_20250530_1545_Kratos y Zeus Sena_simple_compose_01jwhf0057ebg8fcqez5b2xsar.png', 0, '2025-06-03 03:32:58'),
+(21, 'ola mundo', 'mkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', '1000-10-10', '10:10', 'gran salon', 'Barranquilla', 'concierto', 'mayores de 18', './img_eventos/1748922996_20250530_1641_León Dorado de Discoteca_simple_compose_01jwhj72esfj8tkbkeah1qs5wb.png', 0, '2025-06-03 03:56:36');
 
 -- --------------------------------------------------------
 
@@ -104,37 +92,15 @@ CREATE TABLE `usuarios` (
   `direccion` varchar(255) NOT NULL,
   `celular` varchar(15) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `contrasena` varchar(255) NOT NULL
+  `contrasena` varchar(255) NOT NULL,
+  `reset_token` varchar(255) DEFAULT NULL,
+  `reset_token_expiry` datetime DEFAULT NULL,
+  `last_password_reset` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios_temp`
---
-
-CREATE TABLE `usuarios_temp` (
-  `id` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `contrasena` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuarios_temp`
---
-
-INSERT INTO `usuarios_temp` (`id`, `email`, `contrasena`) VALUES
-(1, 'eldiosapolo10@gmail.com', 'eldiosapolo1');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `contacto`
---
-ALTER TABLE `contacto`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `eventos`
@@ -155,44 +121,26 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios_temp`
---
-ALTER TABLE `usuarios_temp`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `contacto`
---
-ALTER TABLE `contacto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
-
---
--- AUTO_INCREMENT de la tabla `usuarios_temp`
---
-ALTER TABLE `usuarios_temp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
