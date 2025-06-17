@@ -147,7 +147,7 @@ if ($result_check->num_rows > 0) {
         // Verificar si tanto el registro como el correo fueron exitosos
         if ($correoEnviado) {
             // Redirigir a eventos.html si todo fue exitoso
-            header("Location: http://localhost/hulul_software_v2/eventos.html");
+            header("Location: http://localhost:8080/hulul_software_v2/eventos.html");
             exit(); // Detener la ejecución después de la redirección
         }
 

@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body>
-  <!-- Sidebar -->
+  <!-- Sidebar nav -->
   <nav class="sidebar">
     <div class="sidebar-header">
       <a href="index.html" class="sidebar-brand">
@@ -20,7 +20,7 @@
     <ul class="sidebar-nav nav flex-column">
       <li class="nav-item">
         <a class="nav-link active" href="index.html" onclick="showSection('dashboard')">
-          <i class="fas fa-tachometer-alt"></i> Dashboard
+          <i class="fas fa-tachometer-alt"></i> Bienvenido
         </a>
       </li>
       <li class="nav-item">
@@ -60,9 +60,9 @@
 
       <!-- Estadísticas de Reservas -->
       <div class="row mb-4">
-        <div class="col-lg-3 col-md-6 mb-3">
+        <div class="col-lg-3 col-md-6 mb-3 ">
           <div class="stats-card">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center reserva_activa">
               <div>
                 <h3 class="stats-number" id="totalReservas">0</h3>
                 <p class="text-muted mb-0">Reservas Activas</p>
@@ -74,6 +74,7 @@
           </div>
         </div>
       </div>
+      <br><br>
 
       <!-- Gráficos -->
       <div class="row mb-4">

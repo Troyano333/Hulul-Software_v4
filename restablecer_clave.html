@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer Contraseña - Hulul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFD700; /* Dorado Hulul */
+            --dark-color: #2c2c2c;
+            --light-color: #ffffff;
+            --gray-color: #888;
+            --error-color: #d93025;
+            --success-color: #1e8e3e;
+        }
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .form-container {
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 420px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px auto;
+            background-color: #f8f9fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-container img {
+            width: 60px;
+            height: auto;
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 25px;
+            color: var(--gray-color);
+            line-height: 1.6;
+        }
+        input {
+            width: 95%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+        .message { margin-top: 15px; font-weight: 600; }
+        .error { color: var(--error-color); }
+        .success { color: var(--success-color); }
+        #resend-container { margin-top: 20px; font-size: 14px; }
+        #resend-link { color: var(--primary-color); font-weight: bold; cursor: pointer; text-decoration: none; }
+        #resend-link.disabled { color: var(--gray-color); cursor: not-allowed; text-decoration: none; }
+        
+        #paso2-codigo, #paso3-nueva-clave { display: none; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="logo-container">
+            <img src="img/h.png" alt="Logo Hulul">
+        </div>
+
+        <div id="paso1-email">
+            <h2>¿Olvidaste tu contraseña?</h2>
+            <p>No te preocupes. Ingresa el correo electrónico **asociado a tu cuenta** y te enviaremos un código de 6 dígitos.</p>
+            <form id="form-email">
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                <button type="submit">Enviar Código</button>
+                <div id="mensaje-paso1" class="message error"></div>
+            </form>
+        </div>
+
+        <div id="paso2-codigo">
+            <h2>Revisa tu Correo</h2>
+            <p id="instruccion-codigo">Hemos enviado un código a <strong id="email-display"></strong>. Por favor, ingrésalo abajo.</p>
+            <form id="form-codigo">
+                <input type="text" id="codigo" name="codigo" placeholder="_ _ _ _ _ _" required maxlength="6" style="text-align:center; font-size: 20px; letter-spacing: 10px;">
+                <button type="submit">Verificar Código</button>
+                <div id="mensaje-paso2" class="message error"></div>
+            </form>
+            <div id="resend-container">
+                <span>¿No recibiste el código?</span>
+                <a id="resend-link">Reenviar</a>
+            </div>
+        </div>
+
+        <div id="paso3-nueva-clave">
+            <h2>Crea tu nueva contraseña</h2>
+            <p>Elige una contraseña segura que no hayas usado antes. Recomendamos al menos 8 caracteres.</p>
+            <form id="form-nueva-clave">
+                <input type="hidden" id="token-final" name="token">
+                <input type="password" id="nueva_contrasena" name="nueva_contrasena" placeholder="Nueva contraseña" required>
+                <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirmar contraseña" required>
+                <button type="submit">Guardar Contraseña</button>
+                <div id="mensaje-paso3" class="message error"></div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="js/restablecer.js"></script>
+</body>
+</html>

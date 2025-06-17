@@ -214,7 +214,7 @@ h1 { /* Estilos del título principal */
   margin: 40px 0 20px;
   font-size: 42px; /* Ajustado tamaño base */
   font-weight: 800;
-  background: linear-gradient(45deg, #ff9900, #ffdd00, #ff6b35, #ff9900);
+  background: linear-gradient(45deg, white, black);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;

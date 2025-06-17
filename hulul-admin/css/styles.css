@@ -1,8 +1,8 @@
 :root {
             --primary-color: #1a1a1a;
             --secondary-color: #2d2d2d;
-            --accent-color: #d4c46ae7;
-            --accent-light: #ffed4e;
+            --accent-color: #FFA725;
+            --accent-light: #0a0a08;
             --success-color: #10b981;
             --warning-color: #f59e0b;
             --danger-color: #ef4444;
@@ -33,7 +33,7 @@
             border-bottom: 2px solid var(--accent-color);
             background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
         }
-
+   /* logo huhul */
         .sidebar-brand {
             color: var(--accent-color);
             font-size: 2rem;
@@ -44,7 +44,7 @@
             gap: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
+/* link de navegacion */
         .nav-link {
             color: var(--text-light);
             padding: 0.75rem 1rem;
@@ -54,6 +54,8 @@
             align-items: center;
             gap: 0.75rem;
             margin: 0.2rem 1rem;
+           text-decoration: none;
+           
         }
 
         .nav-link:hover, .nav-link.active {
@@ -68,7 +70,24 @@
             margin-left: 280px;
             padding: 2rem;
             transition: all 0.3s ease;
+            
         }
+        .main-content .titulo{
+            color: white;
+            font-size: 25px;
+        }
+        .main-content p {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        }
+        small{
+            color: white;
+            font-weight: bold;
+        }
+      
+
+        
 
         .admin-profile {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
@@ -170,7 +189,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+           background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
             border-color: var(--accent-color);
             color: var(--primary-color);
         }

@@ -3,7 +3,9 @@ body {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f8f9fa;
+    --accent-color: #FFA725;
 }
+
 
 /* Estilo de la barra lateral */
 .sidebar {
@@ -19,9 +21,12 @@ body {
 .sidebar-header {
     padding: 2rem 1.5rem;
     border-bottom: 2px solid #ffd700;
-    background: linear-gradient(45deg, #1a1a1a, #ffd700);
+    background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%);
 }
 
+th{
+    color: rgb(0, 0, 0) !important
+}
 .sidebar-brand {
     color: #ffd700;
     font-size: 2rem;
@@ -43,10 +48,12 @@ body {
     align-items: center;
     gap: 0.75rem;
     margin: 0.2rem 1rem;
+    text-decoration: none;
+    
 }
 
 .nav-link:hover, .nav-link.active {
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%);
     color: #1a1a1a;
     transform: translateX(10px);
     font-weight: bold;
@@ -60,15 +67,18 @@ body {
     transition: all 0.3s ease;
 }
 
+
+
 /* Estilo para el título de la sección */
 .chart-title {
-    color: #ffd700;
+    background: linear-gradient(135deg, #FFA725 0%, #3c3c3c 100%);
     font-weight: bold;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+    
 }
 
 /* Estilo para la tabla */
@@ -78,7 +88,7 @@ body {
     padding: 2rem;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     margin-bottom: 2rem;
-    border: 2px solid #ffd700;
+    border: 2px solid #FFA725;
 }
 
 .table {
@@ -86,8 +96,7 @@ body {
 }
 
 .table thead th {
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    color: #1a1a1a;
+    background: #FFA725;
     font-weight: bold;
     border: none;
 }
@@ -97,8 +106,7 @@ body {
     vertical-align: middle;
 }
 
-/* Estilo para los botones de la tabla */
-button {
+/* Estiz{
     background-color: #10b981;
     border: none;
     color: white;

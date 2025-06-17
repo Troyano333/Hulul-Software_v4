@@ -1,513 +1,812 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/diseñoindex.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/mesas_y_palcos.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/eventos_destacados.css" />
+    <link rel="stylesheet" href="./css/palco_imagen.css" />
+    <link rel="stylesheet" href="./css/nombres_palco_y_mesa_media.css" />
+    <link rel="stylesheet" href="./css/chatbot.css" />
+    <link rel="stylesheet" href="./css/google.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./css/diseñoindex.css">
-  <link rel="stylesheet" href="./css/media.css" />
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="stylesheet" href="./css/menu.css" />
-  <link rel="stylesheet" href="./css/mesas_y_palcos.css" />
-  <link rel="stylesheet" href="./css/footer.css" />
-  <link rel="stylesheet" href="./css/eventos_destacados.css" />
-  <link rel="stylesheet" href="./css/palco_imagen.css" />
-  <link rel="stylesheet" href="./css/nombres_palco_y_mesa_media.css" />
-  <link rel="stylesheet" href="./css/chatbot.css">
-  <link rel="stylesheet" href="./css/google.css">
+    <!-- ICONO DE LA PAGINA EN LA PESTAÑA -->
+    <link rel="icon" href="./img/h.png" type="image/png" />
 
-  <!-- ICONO DE LA PAGINA EN LA PESTAÑA -->
-  <link rel="icon" href="./img/h.png" type="image/png" />
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- FUENTES DE GOOGLE -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Hulul</title>
+  </head>
 
-  <title>Hulul </title>
-
-
-
-</head>
-
-<body>
-  <!-- HEADER  -->
-  <header class="header">
-    <div class="contenedor">
-      <div class="menu">
-        <a href="#" class="logo">hu<span class="hu">lul</span></a>
-        <input type="checkbox" id="menu" />
-        <label for="menu">
-          <img class="menu-icon" src="./img/menu.png" alt="Menú" />
-        </label>
-        <nav class="navbar mt-4 ">
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="contacto.html">Contactos</a></li>
-            <li><a href="#map-section">Ubicación</a></li>
-            <li><a href="eventos_index.html">Eventos</a></li>
-            <a href="login.html" class="boton-iniciar btn-primary-hulul">Iniciar sesion</a>
-            <a href="formulario_registro.html" class="boton-iniciar btn-primary-hulul">Registrate</a>
-          </ul>
-        </nav>
-      </div>
-
-
-      <!-- TEXTO DE BIENVENIDA -->
-      <div class="header-content align-items-center row">
-        <div class="header-text col-md-6">
-          <h1>Hu<span class="hu"> lul </span> fácil de utilizar y <br /> Gestionar Reservas</h1>
-          <p class="texto_hulu text-white mb-5 ">
-            ¡Bienvenido a Hulul! Te ofrecemos la mejor selección de palcos y mesas en las discotecas más exclusivas para
-            disfrutar de una experiencia única.
-          </p>
-          <a href="#" class="btn-hulul btn-primary-hulul">informacion</a>
+  <body>
+    <!-- HEADER  -->
+    <header class="header">
+      <div class="contenedor">
+        <div class="menu">
+          <a href="#" class="logo">hu<span class="hu">lul</span></a>
+          <input type="checkbox" id="menu" />
+          <label for="menu">
+            <img class="menu-icon" src="./img/menu.png" alt="Menú" />
+          </label>
+          <nav class="navbar mt-4">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="productos.html">Productos</a></li>
+              <li><a href="contacto.html">Contactos</a></li>
+              <li><a href="#map-section">Ubicación</a></li>
+              <li><a href="eventos_index.html">Eventos</a></li>
+              <a href="login.html" class="boton-iniciar btn-primary-hulul"
+                >Iniciar sesion</a
+              >
+              <a
+                href="formulario_registro.html"
+                class="boton-iniciar btn-primary-hulul"
+                >Registrate</a
+              >
+            </ul>
+          </nav>
         </div>
-        <div class="header-img col-md-6">
-          <img src="./img/h.png" alt="[Logo Hulul]" />
+
+        <!-- TEXTO DE BIENVENIDA -->
+        <div class="header-content align-items-center row">
+          <div class="header-text col-md-6">
+            <h1>
+              Hu<span class="hu"> lul </span> fácil de utilizar y <br />
+              Gestionar Reservas
+            </h1>
+            <p class="texto_hulu text-white mb-5">
+              ¡Bienvenido a Hulul! Te ofrecemos la mejor selección de palcos y
+              mesas en las discotecas más exclusivas para disfrutar de una
+              experiencia única.
+            </p>
+            <a href="#" class="btn-hulul btn-primary-hulul">informacion</a>
+          </div>
+          <div class="header-img col-md-6">
+            <img src="./img/h.png" alt="[Logo Hulul]" />
+          </div>
+          <audio controls src="hulul.mpeg"></audio>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- EVENTOS DESTACADOS -->
-  <section id="eventos-destacados" class="section-bg">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica"><span class="highlight">Eventos</span> Destacados</h2>
-      <p class="subtitulo-seccion">No te pierdas los próximos eventos que hemos preparado para ti. ¡La mejor rumba está
-        en Hulul!</p>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card-hulul text-center">
-            <img src="./img_eventos/silvestre.jfif" class="card-img-top" alt="[Imagen de Evento Silvestre Dangond]" />
-            <div class="card-body">
-              <h5 class="card-title">Silvestre Dangond</h5>
-              <p class="card-text">No te pierdas el concierto del año con Silvestre Dangond, el rey del vallenato.</p>
-              <a href="login.html" class="btn-hulul btn-primary-hulul mt-3">RESERVAR</a>
+    <!-- EVENTOS DESTACADOS -->
+    <section id="eventos-destacados" class="section-bg">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          <span class="highlight">Eventos</span> Destacados
+        </h2>
+        <p class="subtitulo-seccion">
+          No te pierdas los próximos eventos que hemos preparado para ti. ¡La
+          mejor rumba está en Hulul!
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card-hulul text-center">
+              <img
+                src="./img_eventos/silvestre.jfif"
+                class="card-img-top"
+                alt="[Imagen de Evento Silvestre Dangond]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Silvestre Dangond</h5>
+                <p class="card-text">
+                  No te pierdas el concierto del año con Silvestre Dangond, el
+                  rey del vallenato.
+                </p>
+                <a href="login.html" class="btn-hulul btn-primary-hulul mt-3"
+                  >RESERVAR</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul text-center">
+              <img
+                src="./img_eventos/chawala.jfif"
+                class="card-img-top"
+                alt="[Imagen de Evento DJ Chawala]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">DJ Chawala</h5>
+                <p class="card-text">
+                  Disfruta de la mejor música urbana y hip hop con DJ Chawala,
+                  ¡no te lo puedes perder!
+                </p>
+                <a href="login.html" class="btn-hulul btn-primary-hulul mt-3"
+                  >RESERVAR</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul text-center">
+              <img
+                src="./img_eventos/tremendo.jfif"
+                class="card-img-top"
+                alt="[Imagen de Evento DJ Tremendo]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">DJ Tremendo</h5>
+                <p class="card-text">
+                  Vive la mejor música electrónica con DJ Tremendo y su nuevo
+                  show.
+                </p>
+                <a href="login.html" class="btn-hulul btn-primary-hulul mt-3"
+                  >RESERVAR</a
+                >
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card-hulul text-center">
-            <img src="./img_eventos/chawala.jfif" class="card-img-top" alt="[Imagen de Evento DJ Chawala]" />
-            <div class="card-body">
-              <h5 class="card-title">DJ Chawala</h5>
-              <p class="card-text">Disfruta de la mejor música urbana y hip hop con DJ Chawala, ¡no te lo puedes perder!
+      </div>
+    </section>
+
+    <!-- COMO RESERVAR -->
+    <section id="como-reservar">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          <span class="highlight">Reserva Fácil</span> en 3 Pasos
+        </h2>
+        <p class="subtitulo-seccion">
+          En Hulul, asegurar tu noche perfecta es rápido y sencillo. Sigue estos
+          pasos y prepárate para disfrutar.
+        </p>
+        <div class="row mt-4 g-4">
+          <div class="col-md-4">
+            <div class="card-hulul card-informativa text-center">
+              <div class="icono-destacado">
+                <i class="bi bi-calendar-check"></i>
+              </div>
+              <h5 class="card-title">1. Elige tu Evento</h5>
+              <p>
+                Explora nuestros <a href="login.html">eventos</a> y selecciona
+                tu favorito para una noche inolvidable.
               </p>
-              <a href="login.html" class="btn-hulul btn-primary-hulul mt-3">RESERVAR</a>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-hulul text-center">
-            <img src="./img_eventos/tremendo.jfif" class="card-img-top" alt="[Imagen de Evento DJ Tremendo]" />
-            <div class="card-body">
-              <h5 class="card-title">DJ Tremendo</h5>
-              <p class="card-text">Vive la mejor música electrónica con DJ Tremendo y su nuevo show.</p>
-              <a href="login.html" class="btn-hulul btn-primary-hulul mt-3">RESERVAR</a>
+          <div class="col-md-4">
+            <div class="card-hulul card-informativa text-center">
+              <div class="icono-destacado">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <h5 class="card-title">2. Selecciona tu Espacio</h5>
+              <p>
+                Visualiza el <a href="login.html">mapa interactivo</a> y escoge
+                el palco o mesa ideal para ti y tus amigos.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul card-informativa text-center">
+              <div class="icono-destacado">
+                <i class="bi bi-credit-card-fill"></i>
+              </div>
+              <h5 class="card-title">3. Confirma y Disfruta</h5>
+              <p>
+                Completa tus datos, confirma tu reserva de forma segura y
+                ¡prepárate para la diversión!
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMO RESERVAR -->
-  <section id="como-reservar">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica"><span class="highlight">Reserva Fácil</span> en 3 Pasos</h2>
-      <p class="subtitulo-seccion">En Hulul, asegurar tu noche perfecta es rápido y sencillo. Sigue estos pasos y
-        prepárate para disfrutar.</p>
-      <div class="row mt-4 g-4">
-        <div class="col-md-4">
-          <div class="card-hulul card-informativa text-center">
-            <div class="icono-destacado"><i class="bi bi-calendar-check"></i></div>
-            <h5 class="card-title">1. Elige tu Evento</h5>
-            <p>Explora nuestros <a href="login.html">eventos</a> y selecciona tu favorito para una noche inolvidable.
+    <!-- PALCOS -->
+    <section id="servicios" class="section-bg">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          Nuestros <span class="highlight">Palcos</span>
+        </h2>
+        <p class="subtitulo-seccion">
+          Vive una experiencia superior en nuestros palcos exclusivos.
+          Comodidad, lujo y la mejor vista garantizada.
+        </p>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card-hulul text-center">
+              <img
+                src="./img/palco_vip.jpg"
+                class="card-img-top"
+                alt="[Imagen de palco VIP]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Palco <span class="highlight">Vip</span>
+                </h5>
+                <p class="card-text">
+                  Acceso a áreas privadas, bebidas premium y atención
+                  personalizada.
+                </p>
+                <p class="h5 fw-bold my-3 pesos">$1.800.000 COP</p>
+                <a
+                  href="formulario_registro.html"
+                  class="btn-hulul btn-primary-hulul"
+                  >VISÍTANOS</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-hulul text-center">
+              <img
+                src="./img/palco_plata.jpg"
+                class="card-img-top"
+                alt="[Imagen de palco Plata]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Palco <span class="highlight">Plata</span>
+                </h5>
+                <p class="card-text">
+                  Acceso preferencial, sofás cómodos y una botella de licor
+                  estándar.
+                </p>
+                <p class="h5 fw-bold my-3 pesos">$1.200.000 COP</p>
+                <a
+                  href="formulario_registro.html"
+                  class="btn-hulul btn-primary-hulul"
+                  >VISÍTANOS</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-hulul text-center">
+              <img
+                src="./img/palco_basico.jpg"
+                class="card-img-top"
+                alt="[Imagen de palco Básica]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Palco <span class="highlight">Bronce</span>
+                </h5>
+                <p class="card-text">
+                  Ideal para quienes buscan un espacio cómodo a un precio
+                  accesible.
+                </p>
+                <p class="h5 fw-bold my-3 pesos">$850.000 COP</p>
+                <a
+                  href="formulario_registro.html"
+                  class="btn-hulul btn-primary-hulul"
+                  >VISÍTANOS</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MESAS -->
+    <section id="servicios-mesas">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          Nuestras <span class="highlight">Mesas</span>
+        </h2>
+        <p class="subtitulo-seccion">
+          Elige la mesa perfecta para tu grupo y disfruta de una noche increíble
+          con el mejor servicio.
+        </p>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card-hulul text-center">
+              <img
+                src="./img/mesa_vip.webp"
+                class="card-img-top"
+                alt="[Imagen de Mesa VIP]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Mesa <span class="highlight">Vip</span>
+                </h5>
+                <p class="card-text">
+                  Ubicación privilegiada y servicio premium de bebidas.
+                </p>
+                <p class="h5 fw-bold my-3 pesos">$1.000.000 COP</p>
+                <a
+                  href="formulario_registro.html"
+                  class="btn-hulul btn-primary-hulul"
+                  >VISÍTANOS</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-hulul text-center">
+              <img
+                src="./img/mesa_plata.avif"
+                class="card-img-top"
+                alt="[Imagen de Mesa Plata]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Mesa <span class="highlight">Plata</span>
+                </h5>
+                <p class="card-text">
+                  Área exclusiva con buena vista y una botella de licor premium.
+                </p>
+                <p class="h5 fw-bold my-3 pesos">$700.000 COP</p>
+                <a
+                  href="formulario_registro.html"
+                  class="btn-hulul btn-primary-hulul"
+                  >VISÍTANOS</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-hulul text-center">
+              <img
+                src="./img/mesa_basica.webp"
+                class="card-img-top"
+                alt="[Imagen de Mesa Básica]"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Mesa <span class="highlight">Básica</span>
+                </h5>
+                <p class="card-text">
+                  Opción económica y cómoda para grupos de hasta 4 personas.
+                </p>
+                <p class="h5 fw-bold my-3 pesos">$450.000 COP</p>
+                <a
+                  href="formulario_registro.html"
+                  class="btn-hulul btn-primary-hulul"
+                  >VISÍTANOS</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS EXCLUSIVOS -->
+    <section id="beneficios-exclusivos">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          Beneficios de <span class="highlight">Reservar en Hulul</span>
+        </h2>
+        <p class="subtitulo-seccion">
+          Al reservar con nosotros, no solo obtienes un lugar, sino una
+          experiencia llena de ventajas.
+        </p>
+        <div class="row mt-4 g-4">
+          <div class="col-md-4">
+            <div class="card-hulul card-informativa text-center">
+              <div class="icono-destacado">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h5 class="card-title">Reservas Seguras</h5>
+              <p>
+                Plataforma confiable con confirmación instantánea para tu
+                tranquilidad y seguridad.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul card-informativa text-center">
+              <div class="icono-destacado"><i class="bi bi-gem"></i></div>
+              <h5 class="card-title">Experiencia Premium</h5>
+              <p>
+                Accede a los mejores palcos y mesas con atención preferencial y
+                un ambiente exclusivo.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul card-informativa text-center">
+              <div class="icono-destacado"><i class="bi bi-tags-fill"></i></div>
+              <h5 class="card-title">Ofertas Únicas</h5>
+              <p>
+                Descuentos y promociones especiales solo para nuestros usuarios
+                registrados y suscriptores.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOCHES ESPECIALES -->
+    <section id="noches-especiales" class="section-bg">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          <span class="highlight">Noches</span> Especiales
+        </h2>
+        <p class="subtitulo-seccion">
+          Cada noche es una nueva historia. Descubre nuestros eventos temáticos
+          y las fiestas que marcan la diferencia.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card-hulul d-flex flex-column">
+              <img
+                src="./img/salsa.jpg"
+                class="card-img-top"
+                alt="[Imagen de Noche de Salsa en Hulul]"
+              />
+              <div class="card-body d-flex flex-column flex-grow-1">
+                <h5 class="card-title">Noche de Salsa y Sabor</h5>
+                <p class="card-text text-muted small">Todos los Miércoles</p>
+                <p class="card-text flex-grow-1">
+                  ¡Prepárate para bailar con los mejores ritmos latinos y
+                  promociones en cócteles!
+                </p>
+                <a href="login.html" class="btn-hulul btn-primary-hulul mt-3"
+                  >MÁS DETALLES</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul d-flex flex-column">
+              <img
+                src="./img/duque.webp"
+                class="card-img-top"
+                alt="[Imagen de DJ Invitado Especial en Hulul]"
+              />
+              <div class="card-body d-flex flex-column flex-grow-1">
+                <h5 class="card-title">DJ Duque</h5>
+                <p class="card-text text-muted small">Sábado, 15 de Julio</p>
+                <p class="card-text flex-grow-1">
+                  Una noche épica con un set exclusivo de DJ Duque. ¡Consigue
+                  tus entradas anticipadas!
+                </p>
+                <a href="login.html" class="btn-hulul btn-primary-hulul mt-3"
+                  >RESERVAR AHORA</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul d-flex flex-column">
+              <img
+                src="./img/aniversario.jpg"
+                class="card-img-top"
+                alt="[Imagen de Fiesta de Aniversario Hulul]"
+              />
+              <div class="card-body d-flex flex-column flex-grow-1">
+                <h5 class="card-title">¡Gran Fiesta Aniversario!</h5>
+                <p class="card-text text-muted small">Viernes, 28 de Julio</p>
+                <p class="card-text flex-grow-1">
+                  Celebra con nosotros. Sorpresas, artistas invitados y la mejor
+                  rumba de la ciudad.
+                </p>
+                <a href="login.html" class="btn-hulul btn-primary-hulul mt-3"
+                  >UNIRME A LA FIESTA</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section-bg">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          ¿Qué Dicen Nuestros <span class="highlight">Clientes?</span>
+        </h2>
+        <p class="subtitulo-seccion">
+          La satisfacción de nuestros clientes es nuestra mejor carta de
+          presentación. Lee lo que opinan de su experiencia en Hulul.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card-hulul text-center p-3">
+              <div class="card-body d-flex flex-column">
+                <img
+                  src="https://placehold.co/100x100/FFA725/white?text=AP"
+                  alt="[Imagen de Cliente Ana Pérez]"
+                  class="rounded-circle mx-auto"
+                />
+                <p class="card-text fst-italic mt-4 flex-grow-1">
+                  "¡La mejor noche de mi vida! El Palco VIP en Hulul fue
+                  increíble, la atención y la música espectaculares. ¡Volveré
+                  pronto!"
+                </p>
+                <h5 class="card-title mt-3 mb-0">- Ana Pérez</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul text-center p-3">
+              <div class="card-body d-flex flex-column">
+                <img
+                  src="https://placehold.co/100x100/3c3c3c/white?text=CL"
+                  alt="[Imagen de Cliente Carlos López]"
+                  class="rounded-circle mx-auto"
+                />
+                <p class="card-text fst-italic mt-4 flex-grow-1">
+                  "Reservar la mesa fue súper fácil a través de la web. El
+                  ambiente en Hulul es de otro nivel. ¡Recomendadísimo!"
+                </p>
+                <h5 class="card-title mt-3 mb-0">- Carlos López</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-hulul text-center p-3">
+              <div class="card-body d-flex flex-column">
+                <img
+                  src="https://placehold.co/100x100/FFA725/white?text=SG"
+                  alt="[Imagen de Cliente Sofía Gómez]"
+                  class="rounded-circle mx-auto"
+                />
+                <p class="card-text fst-italic mt-4 flex-grow-1">
+                  "Me encantaron los eventos que organizan. Siempre hay algo
+                  nuevo y emocionante. El personal es muy amable."
+                </p>
+                <h5 class="card-title mt-3 mb-0">- Sofía Gómez</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section id="map-section">
+      <div class="container">
+        <h2 class="titulo-seccion-dinamica">
+          Nuestra <span class="highlight">Ubicación</span>
+        </h2>
+        <p class="subtitulo-seccion">
+          Encuéntranos en el corazón de la fiesta. ¡Te esperamos para vivir una
+          noche inolvidable!
+        </p>
+        <div
+          id="map-container"
+          style="
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+          "
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.9713802984!2d-75.55229433933806!3d10.423845720838829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f9f951b554d%3A0x484b420806679b6!2sLa%20Jugada%20Club%20House%20Gastrobar!5e0!3m2!1ses-419!2sco!4v1748917047707!5m2!1ses-419!2sco"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUSCRIPCIÓN -->
+    <section id="suscripcion" class="section-bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10 text-center">
+            <h2 class="titulo-seccion-dinamica">
+              ¡No te Pierdas <span class="highlight">Nada!</span>
+            </h2>
+            <p>
+              Suscríbete a nuestro boletín para recibir noticias sobre próximos
+              eventos, DJs invitados, ofertas especiales y mucho más,
+              directamente en tu correo.
+            </p>
+            <form id="suscripcionForm" class="mt-4">
+              <div class="input-group input-group-lg">
+                <input
+                  type="email"
+                  id="emailSuscripcion"
+                  class="form-control rounded-2"
+                  placeholder="Tu correo electrónico"
+                  required
+                  aria-label="Tu correo electrónico"
+                />
+              </div>
+              <br /><br />
+              <button
+                class="btn-hulul btn-primary-hulul"
+                type="submit"
+                id="btnSuscribir"
+              >
+                Suscribirme
+              </button>
+              <div
+                id="suscripcionMensaje"
+                class="mt-3"
+                style="min-height: 24px"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top row">
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 footer-about">
+            <div class="footer-logo">
+              <a href="#" class="logo">hu<span class="hu">lul</span></a>
+            </div>
+            <p>
+              La plataforma líder para reservar tus mejores noches. Experiencias
+              exclusivas, fácil y seguro.
+            </p>
+            <div class="footer-social-icons mt-3">
+              <a href="https://www.facebook.com/profile.php?id=61576809017299"><i class="bi bi-facebook"></i></a>
+              <a href="https://wa.me/573506025335"
+                ><i class="bi bi-whatsapp"></i
+              ></a>
+              <a href="https://www.instagram.com/softwarehulul/"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.youtube.com/@HULUL-q8h"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+            <div class="link">
+              <h3>Navegación</h3>
+              <ul class="list-unstyled">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="eventos_index.html">Eventos</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <div class="link">
+              <h3>Información</h3>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="preguntasfrecuentes.html">Preguntas frecuentes</a>
+                </li>
+                <li>
+                  <a href="politicayprivacidad.html">Política de privacidad</a>
+                </li>
+                <li>
+                  <a href="terminosycondiciones.html">Términos y condiciones</a>
+                </li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="link">
+              <h3>Legal</h3>
+              <ul class="list-unstyled">
+                <li><a href="#">Aviso Legal</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 footer-copyright-text">
+            <p class="mb-0">
+              © 2025 Hulul Software. Todos los derechos reservados.
             </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card-hulul card-informativa text-center">
-            <div class="icono-destacado"><i class="bi bi-geo-alt-fill"></i></div>
-            <h5 class="card-title">2. Selecciona tu Espacio</h5>
-            <p>Visualiza el <a href="login.html">mapa interactivo</a> y escoge el palco o mesa ideal para ti y tus
-              amigos.</p>
-          </div>
+      </div>
+    </footer>
+
+    <!-- CHAT BOT -->
+    <div
+      class="chatbot-toggle"
+      onclick="toggleChatbot()"
+      title="Abrir chat Hulul"
+      aria-label="Abrir chat Hulul"
+    >
+      <i class="fas fa-robot"></i>
+    </div>
+    <div class="chatbot-container">
+      <div class="chatbot-header">
+        <div class="header-info">
+          <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+          <h3>🎉 Hulul Asistente</h3>
+          <p>Tu asistente personal para eventos</p>
         </div>
-        <div class="col-md-4">
-          <div class="card-hulul card-informativa text-center">
-            <div class="icono-destacado"><i class="bi bi-credit-card-fill"></i></div>
-            <h5 class="card-title">3. Confirma y Disfruta</h5>
-            <p>Completa tus datos, confirma tu reserva de forma segura y ¡prepárate para la diversión!</p>
+        <button
+          class="close-btn"
+          onclick="toggleChatbot()"
+          aria-label="Cerrar chat"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages">
+        <div class="message bot-message">
+          ¡Hola! 👋 Soy tu asistente de Hulul Discoteca. ¿En qué puedo ayudarte
+          hoy?
+          <div class="menu-options">
+            <div class="menu-option">
+              <i class="fas fa-music"></i> Ver eventos disponibles
+            </div>
+            <div class="menu-option">
+              <i class="fas fa-ticket-alt"></i> Información sobre reservas
+            </div>
+            <div class="menu-option">
+              <i class="fas fa-wine-bottle"></i> Catálogo de productos
+            </div>
+            <div class="menu-option">
+              <i class="fas fa-question-circle"></i> Pregunta general
+            </div>
+            <div class="menu-option">
+              <i class="fas fa-info-circle"></i> Información sobre Hulul
+            </div>
+            <div class="menu-option">
+              <i class="fas fa-life-ring"></i> Contactar soporte
+            </div>
           </div>
+          <div class="message-timestamp">10:01 AM</div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <div class="input-container">
+          <input
+            type="text"
+            class="chat-input"
+            placeholder="¿Qué deseas saber?"
+            onkeypress="handleKeyPress(event)"
+            autocomplete="off"
+          />
+          <button class="voice-btn" title="Voice Input (Not Implemented)">
+            <i class="fas fa-microphone"></i>
+          </button>
+          <button class="send-btn" onclick="sendMessage()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <div class="quick-actions">
+          <button class="quick-action">
+            <i class="fas fa-calendar-alt"></i> Ver Eventos
+          </button>
+          <button class="quick-action">
+            <i class="fas fa-ticket-alt"></i> Reservar
+          </button>
+          <button class="quick-action">
+            <i class="fas fa-info-circle"></i> Ayuda
+          </button>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- PALCOS -->
-  <section id="servicios" class="section-bg">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica">Nuestros <span class="highlight">Palcos</span></h2>
-      <p class="subtitulo-seccion">Vive una experiencia superior en nuestros palcos exclusivos. Comodidad, lujo y la
-        mejor vista garantizada.</p>
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="card-hulul text-center">
-            <img src="./img/palco_vip.jpg" class="card-img-top" alt="[Imagen de palco VIP]">
-            <div class="card-body">
-              <h5 class="card-title">Palco <span class="highlight">Vip</span></h5>
-              <p class="card-text">Acceso a áreas privadas, bebidas premium y atención personalizada.</p>
-              <p class="h5 fw-bold my-3 pesos">$1.800.000 COP</p>
-              <a href="formulario_registro.html" class="btn-hulul btn-primary-hulul">VISÍTANOS</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-hulul text-center">
-            <img src="./img/palco_plata.jpg" class="card-img-top" alt="[Imagen de palco Plata]">
-            <div class="card-body">
-              <h5 class="card-title">Palco <span class="highlight">Plata</span></h5>
-              <p class="card-text">Acceso preferencial, sofás cómodos y una botella de licor estándar.</p>
-              <p class="h5 fw-bold my-3 pesos">$1.200.000 COP</p>
-              <a href="formulario_registro.html" class="btn-hulul btn-primary-hulul">VISÍTANOS</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-hulul text-center">
-            <img src="./img/palco_basico.jpg" class="card-img-top" alt="[Imagen de palco Básica]">
-            <div class="card-body">
-              <h5 class="card-title">Palco <span class="highlight">Bronce</span></h5>
-              <p class="card-text">Ideal para quienes buscan un espacio cómodo a un precio accesible.</p>
-              <p class="h5 fw-bold my-3 pesos">$850.000 COP</p>
-              <a href="formulario_registro.html" class="btn-hulul btn-primary-hulul">VISÍTANOS</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MESAS -->
-  <section id="servicios-mesas">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica">Nuestras <span class="highlight">Mesas</span></h2>
-      <p class="subtitulo-seccion">Elige la mesa perfecta para tu grupo y disfruta de una noche increíble con el mejor
-        servicio.</p>
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="card-hulul text-center">
-            <img src="./img/mesa_vip.webp" class="card-img-top" alt="[Imagen de Mesa VIP]">
-            <div class="card-body">
-              <h5 class="card-title">Mesa <span class="highlight">Vip</span></h5>
-              <p class="card-text">Ubicación privilegiada y servicio premium de bebidas.</p>
-              <p class="h5 fw-bold my-3 pesos">$1.000.000 COP</p>
-              <a href="formulario_registro.html" class="btn-hulul btn-primary-hulul">VISÍTANOS</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-hulul text-center">
-            <img src="./img/mesa_plata.avif" class="card-img-top" alt="[Imagen de Mesa Plata]">
-            <div class="card-body">
-              <h5 class="card-title">Mesa <span class="highlight">Plata</span></h5>
-              <p class="card-text">Área exclusiva con buena vista y una botella de licor premium.</p>
-              <p class="h5 fw-bold my-3 pesos">$700.000 COP</p>
-              <a href="formulario_registro.html" class="btn-hulul btn-primary-hulul">VISÍTANOS</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-hulul text-center">
-            <img src="./img/mesa_basica.webp" class="card-img-top" alt="[Imagen de Mesa Básica]">
-            <div class="card-body">
-              <h5 class="card-title">Mesa <span class="highlight">Básica</span></h5>
-              <p class="card-text">Opción económica y cómoda para grupos de hasta 4 personas.</p>
-              <p class="h5 fw-bold my-3 pesos">$450.000 COP</p>
-              <a href="formulario_registro.html" class="btn-hulul btn-primary-hulul">VISÍTANOS</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFICIOS EXCLUSIVOS -->
-  <section id="beneficios-exclusivos">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica">Beneficios de <span class="highlight">Reservar en Hulul</span></h2>
-      <p class="subtitulo-seccion">Al reservar con nosotros, no solo obtienes un lugar, sino una experiencia llena de
-        ventajas.</p>
-      <div class="row mt-4 g-4">
-        <div class="col-md-4">
-          <div class="card-hulul card-informativa text-center">
-            <div class="icono-destacado"><i class="bi bi-shield-lock-fill"></i></div>
-            <h5 class="card-title">Reservas Seguras</h5>
-            <p>Plataforma confiable con confirmación instantánea para tu tranquilidad y seguridad.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-hulul card-informativa text-center">
-            <div class="icono-destacado"><i class="bi bi-gem"></i></div>
-            <h5 class="card-title">Experiencia Premium</h5>
-            <p>Accede a los mejores palcos y mesas con atención preferencial y un ambiente exclusivo.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-hulul card-informativa text-center">
-            <div class="icono-destacado"><i class="bi bi-tags-fill"></i></div>
-            <h5 class="card-title">Ofertas Únicas</h5>
-            <p>Descuentos y promociones especiales solo para nuestros usuarios registrados y suscriptores.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOCHES ESPECIALES -->
-  <section id="noches-especiales" class="section-bg">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica"><span class="highlight">Noches</span> Especiales</h2>
-      <p class="subtitulo-seccion">Cada noche es una nueva historia. Descubre nuestros eventos temáticos y las fiestas
-        que marcan la diferencia.</p>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card-hulul d-flex flex-column">
-            <img src="./img/salsa.jpg" class="card-img-top" alt="[Imagen de Noche de Salsa en Hulul]">
-            <div class="card-body d-flex flex-column flex-grow-1">
-              <h5 class="card-title">Noche de Salsa y Sabor</h5>
-              <p class="card-text text-muted small">Todos los Miércoles</p>
-              <p class="card-text flex-grow-1">¡Prepárate para bailar con los mejores ritmos latinos y promociones en
-                cócteles!</p>
-              <a href="login.html" class="btn-hulul btn-primary-hulul mt-3">MÁS DETALLES</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-hulul d-flex flex-column">
-            <img src="./img/duque.webp" class="card-img-top" alt="[Imagen de DJ Invitado Especial en Hulul]">
-            <div class="card-body d-flex flex-column flex-grow-1">
-              <h5 class="card-title">DJ Duque</h5>
-              <p class="card-text text-muted small">Sábado, 15 de Julio</p>
-              <p class="card-text flex-grow-1">Una noche épica con un set exclusivo de DJ Duque. ¡Consigue tus entradas
-                anticipadas!</p>
-              <a href="login.html" class="btn-hulul btn-primary-hulul mt-3">RESERVAR AHORA</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-hulul d-flex flex-column">
-            <img src="./img/aniversario.jpg" class="card-img-top" alt="[Imagen de Fiesta de Aniversario Hulul]">
-            <div class="card-body d-flex flex-column flex-grow-1">
-              <h5 class="card-title">¡Gran Fiesta Aniversario!</h5>
-              <p class="card-text text-muted small">Viernes, 28 de Julio</p>
-              <p class="card-text flex-grow-1">Celebra con nosotros. Sorpresas, artistas invitados y la mejor rumba de
-                la ciudad.</p>
-              <a href="login.html" class="btn-hulul btn-primary-hulul mt-3">UNIRME A LA FIESTA</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- TESTIMONIOS -->
-  <section id="testimonios" class="section-bg">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica">¿Qué Dicen Nuestros <span class="highlight">Clientes?</span></h2>
-      <p class="subtitulo-seccion">La satisfacción de nuestros clientes es nuestra mejor carta de presentación. Lee lo
-        que opinan de su experiencia en Hulul.</p>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card-hulul text-center p-3">
-            <div class="card-body d-flex flex-column">
-              <img src="https://placehold.co/100x100/FFA725/white?text=AP" alt="[Imagen de Cliente Ana Pérez]"
-                class="rounded-circle mx-auto">
-              <p class="card-text fst-italic mt-4 flex-grow-1">"¡La mejor noche de mi vida! El Palco VIP en Hulul fue
-                increíble, la atención y la música espectaculares. ¡Volveré pronto!"</p>
-              <h5 class="card-title mt-3 mb-0">- Ana Pérez</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-hulul text-center p-3">
-            <div class="card-body d-flex flex-column">
-              <img src="https://placehold.co/100x100/3c3c3c/white?text=CL" alt="[Imagen de Cliente Carlos López]"
-                class="rounded-circle mx-auto">
-              <p class="card-text fst-italic mt-4 flex-grow-1">"Reservar la mesa fue súper fácil a través de la web. El
-                ambiente en Hulul es de otro nivel. ¡Recomendadísimo!"</p>
-              <h5 class="card-title mt-3 mb-0">- Carlos López</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-hulul text-center p-3">
-            <div class="card-body d-flex flex-column">
-              <img src="https://placehold.co/100x100/FFA725/white?text=SG" alt="[Imagen de Cliente Sofía Gómez]"
-                class="rounded-circle mx-auto">
-              <p class="card-text fst-italic mt-4 flex-grow-1">"Me encantaron los eventos que organizan. Siempre hay
-                algo nuevo y emocionante. El personal es muy amable."</p>
-              <h5 class="card-title mt-3 mb-0">- Sofía Gómez</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAPA -->
-  <section id="map-section">
-    <div class="container">
-      <h2 class="titulo-seccion-dinamica">Nuestra <span class="highlight">Ubicación</span></h2>
-      <p class="subtitulo-seccion">Encuéntranos en el corazón de la fiesta. ¡Te esperamos para vivir una noche
-        inolvidable!</p>
-      <div id="map-container"
-        style="border-radius: 0.75rem; overflow: hidden; box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.9713802984!2d-75.55229433933806!3d10.423845720838829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f9f951b554d%3A0x484b420806679b6!2sLa%20Jugada%20Club%20House%20Gastrobar!5e0!3m2!1ses-419!2sco!4v1748917047707!5m2!1ses-419!2sco"
-          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUSCRIPCIÓN -->
-  <section id="suscripcion" class="section-bg">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10 text-center">
-          <h2 class="titulo-seccion-dinamica">¡No te Pierdas <span class="highlight">Nada!</span></h2>
-          <p>Suscríbete a nuestro boletín para recibir noticias sobre próximos eventos, DJs invitados, ofertas
-            especiales y mucho más, directamente en tu correo.</p>
-          <form id="suscripcionForm" class="mt-4">
-            <div class="input-group input-group-lg">
-              <input type="email" id="emailSuscripcion" class="form-control rounded-2" placeholder="Tu correo electrónico"
-                required aria-label="Tu correo electrónico">
-              </div><br><br>
-              <button class="btn-hulul btn-primary-hulul" type="submit" id="btnSuscribir">Suscribirme</button>
-            <div id="suscripcionMensaje" class="mt-3" style="min-height: 24px;"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top row">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 footer-about">
-          <div class="footer-logo">
-            <a href="#" class="logo">hu<span class="hu">lul</span></a>
-          </div>
-          <p>La plataforma líder para reservar tus mejores noches. Experiencias exclusivas, fácil y seguro.</p>
-          <div class="footer-social-icons mt-3">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="https://wa.me/573506025335"><i class="bi bi-whatsapp"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-          <div class="link">
-            <h3>Navegación</h3>
-            <ul class="list-unstyled">
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="eventos_index.html">Eventos</a></li>
-              <li><a href="productos.html">Productos</a></li>
-              <li><a href="#servicios">Servicios</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-          <div class="link ">
-            <h3>Información</h3>
-            <ul class="list-unstyled">
-              <li><a href="preguntasfrecuentes.html">Preguntas frecuentes</a></li>
-              <li><a href="politicayprivacidad.html">Política de privacidad</a></li>
-              <li><a href="terminosycondiciones.html">Términos y condiciones</a></li>
-              <li><a href="contacto.html">Contáctanos</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="link">
-            <h3>Legal</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Aviso Legal</a></li>
-              <li><a href="#">Política de Cookies</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 footer-copyright-text">
-          <p class="mb-0">© 2025 Hulul Software. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- CHAT BOT -->
-  <div class="chatbot-toggle" onclick="toggleChatbot()" title="Abrir chat Hulul" aria-label="Abrir chat Hulul">
-    <i class="fas fa-robot"></i>
-  </div>
-  <div class="chatbot-container">
-    <div class="chatbot-header">
-      <div class="header-info">
-        <div class="bot-avatar"> <i class="fas fa-robot"></i> </div>
-        <h3>🎉 Hulul Asistente</h3>
-        <p>Tu asistente personal para eventos</p>
-      </div>
-      <button class="close-btn" onclick="toggleChatbot()" aria-label="Cerrar chat"> <i
-          class="fas fa-times"></i></button>
-    </div>
-    <div class="chatbot-messages">
-      <div class="message bot-message">
-        ¡Hola! 👋 Soy tu asistente de Hulul Discoteca. ¿En qué puedo ayudarte hoy?
-        <div class="menu-options">
-          <div class="menu-option"><i class="fas fa-music"></i> Ver eventos disponibles</div>
-          <div class="menu-option"><i class="fas fa-ticket-alt"></i> Información sobre reservas</div>
-          <div class="menu-option"><i class="fas fa-wine-bottle"></i> Catálogo de productos</div>
-          <div class="menu-option"><i class="fas fa-question-circle"></i> Pregunta general</div>
-          <div class="menu-option"><i class="fas fa-info-circle"></i> Información sobre Hulul</div>
-          <div class="menu-option"><i class="fas fa-life-ring"></i> Contactar soporte</div>
-        </div>
-        <div class="message-timestamp">10:01 AM</div>
-      </div>
-    </div>
-    <div class="chatbot-input">
-      <div class="input-container">
-        <input type="text" class="chat-input" placeholder="¿Qué deseas saber?" onkeypress="handleKeyPress(event)"
-          autocomplete="off">
-        <button class="voice-btn" title="Voice Input (Not Implemented)"> <i class="fas fa-microphone"></i> </button>
-        <button class="send-btn" onclick="sendMessage()"> <i class="fas fa-paper-plane"></i> </button>
-      </div>
-      <div class="quick-actions">
-        <button class="quick-action"><i class="fas fa-calendar-alt"></i> Ver Eventos</button>
-        <button class="quick-action"><i class="fas fa-ticket-alt"></i> Reservar</button>
-        <button class="quick-action"><i class="fas fa-info-circle"></i> Ayuda</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="./js/chatbot.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/chatbot.js"></script>
+  </body>
 </html>
