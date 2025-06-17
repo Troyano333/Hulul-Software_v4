@@ -1,91 +1,83 @@
-// Pega este código completo en tu archivo confirmacion.js
-
-// --- FUNCIÓN PARA OBTENER PARÁMETROS DE LA URL ---
-function getParams() {
-    const params = {};
-    if (window.location.search) {
-        const query = window.location.search.substring(1);
-        const vars = query.split('&');
-        for (let i = 0; i < vars.length; i++) {
-            const pair = vars[i].split('=');
-            const value = (pair[1] || '').replace(/\+/g, ' ');
-            params[decodeURIComponent(pair[0])] = decodeURIComponent(value);
-        }
-    }
-    return params;
-}
-
-// --- CAMBIO: Nueva función para los estados de PayPal ---
-function estadoPaypal(estado) {
-    // Los estados de PayPal usualmente son texto en inglés
-    switch (estado) {
-        case "Completed":
-        case "Processed":
-            return '<span class="badge badge-success">Aprobada</span>';
-        case "Pending":
-            return '<span class="badge badge-warning">Pendiente</span>';
-        case "Denied":
-        case "Failed":
-        case "Refunded":
-        case "Reversed":
-            return '<span class="badge badge-danger">Rechazada/Reversada</span>';
-        default:
-            return `<span class="badge badge-secondary">${estado || 'Desconocido'}</span>`;
-    }
-}
-
-// --- CÓDIGO PRINCIPAL QUE SE EJECUTA CUANDO LA PÁGINA CARGA ---
-document.addEventListener("DOMContentLoaded", () => {
-    const datos = getParams();
-    console.log("Datos recibidos de la URL (PayPal):", datos); // Para depurar
-
-    // PARTE 1: Llenar el resumen del pago
-    const resumenPagoElement = document.getElementById('resumen_pago');
-    if (resumenPagoElement) {
-        let html = '';
-        // CAMBIO: La condición ahora busca 'tx', el ID de transacción de PayPal
-        if (datos.tx) {
-            html += `<h3>¡Gracias por tu compra!</h3>`;
-            // CAMBIO: Usamos la función y variable de estado de PayPal ('st')
-            html += `<p>Estado de la transacción: ${estadoPaypal(datos.st)}</p>`;
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Función para llenar los datos en la página una vez que los recibimos del servidor
+    function rellenarDetalles(datos) {
+        // ==========================================================
+        // ESTA ES LA PARTE CORREGIDA que usa datos.nombre y datos.apellido
+        // ==========================================================
+        document.getElementById("nombre_reserva").textContent = datos.nombre;
+        document.getElementById("apellido_reserva").textContent = datos.apellido;
+        
+        // Llenamos el resto de los datos
+        document.getElementById("evento_reserva").textContent = datos.evento;
+        document.getElementById("fecha_reserva").textContent = datos.fecha;
+        document.getElementById("hora_reserva").textContent = datos.hora;
+        document.getElementById("lugar_reserva").textContent = datos.lugar;
+        document.getElementById("zona_reserva").textContent = datos.zona;
+        document.getElementById("precio_reserva").textContent = `$${datos.precio}`;
+        
+        // Creamos la imagen del QR dinámicamente y la añadimos al div
+        const qrContenedor = document.getElementById("codigo-qr");
+        if (qrContenedor) {
+            // Creamos un nuevo elemento de imagen para el QR
+            const qrImagen = document.createElement('img');
+            qrImagen.src = datos.qr_base64; // Le ponemos el QR que viene del servidor
+            qrImagen.alt = "Código QR de tu reserva";
+            qrImagen.style.maxWidth = '100%'; // Le damos un estilo básico para que sea responsive
             
-            // CAMBIO: Usamos las variables de PayPal como 'tx' y 'amt'
-            html += `<ul class="list-group mt-3">
-                <li class="list-group-item"><strong>ID de Transacción:</strong> ${datos.tx}</li>
-                <li class="list-group-item"><strong>Artículo:</strong> ${datos.item_name || '-'}</li>
-                <li class="list-group-item"><strong>Valor pagado:</strong> ${datos.cc || '$'} ${datos.amt || '-'}</li>
-                <li class="list-group-item"><strong>Método de pago:</strong> PayPal</li>
-            </ul>`;
-            html += `<p class="mt-3 small">Si tienes dudas, contáctanos con tu ID de Transacción.<br>¡Nos vemos en la fiesta!</p>`;
-        } else {
-            // Este mensaje ahora solo aparecerá si no hay ID de transacción de PayPal
-            html = '<p class="text-warning">No se encontraron datos del pago. Si el pago fue exitoso, los detalles de la reserva están abajo.</p>';
+            // Limpiamos el contenedor y añadimos la nueva imagen QR y el párrafo de instrucción
+            qrContenedor.innerHTML = `<h2><i class="bi bi-qr-code"></i> Tu Código QR</h2>`; // Reseteamos el título
+            qrContenedor.appendChild(qrImagen); // Añadimos la imagen del QR
+            qrContenedor.innerHTML += `<p class="qr-instruction">Presenta este código QR en la entrada de la discoteca para validar tu reserva.</p>`;
         }
-        resumenPagoElement.innerHTML = html;
     }
 
-    // PARTE 2: Llenar los detalles de la reserva (esto sigue igual)
-    document.getElementById("nombre_reserva").textContent = datos.nombre || "No disponible";
-    document.getElementById("apellido_reserva").textContent = datos.apellido || "No disponible";
-    document.getElementById("evento_reserva").textContent = datos.evento || "No disponible";
-    document.getElementById("fecha_reserva").textContent = datos.fecha || "No disponible";
-    document.getElementById("hora_reserva").textContent = datos.hora || "No disponible";
-    document.getElementById("lugar_reserva").textContent = datos.lugar || "No disponible";
-    const palcoElement = document.getElementById("palco_reserva") || document.getElementById("zona_reserva");
-    if (palcoElement) {
-        palcoElement.textContent = datos.zona || "No disponible";
-    }
-    // Para el precio que agregaste
-    const precioElement = document.getElementById("precio_reserva");
-    if (precioElement) {
-        precioElement.textContent = datos.precio ? `$${datos.precio}` : (datos.amt ? `$${datos.amt}` : "No disponible");
+    // --- LÓGICA DE PRUEBA: SIEMPRE SE EJECUTA ---
+    // (Hemos mantenido la lógica de la versión de prueba que siempre genera el tiquete)
+
+    const formData = new FormData();
+    for (const [key, value] of urlParams.entries()) {
+        if (key === 'evento') formData.append('eventoSeleccionado', value);
+        else if (key === 'zona') formData.append('zonaSeleccionada', value);
+        else if (key === 'fecha') formData.append('fechaEvento', value);
+        else if (key === 'hora') formData.append('horaEvento', value);
+        else if (key === 'precio') formData.append('precioZona', value);
+        else formData.append(key, value);
     }
 
-    // PARTE 3: Generar el código QR (esto sigue igual)
-    const qrElement = document.getElementById("qr_png");
-    if (qrElement) {
-        const textoQR = `Reserva: ${datos.nombre} ${datos.apellido}, Evento: ${datos.evento}, Fecha: ${datos.fecha}, Zona: ${datos.zona}`;
-        const qrURL = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(textoQR)}`;
-        qrElement.src = qrURL;
+    // Verificamos que los datos mínimos (nombre y email) hayan llegado en la URL
+    if (!urlParams.has('nombre') || !urlParams.has('email')) {
+         document.body.innerHTML = `<div style="text-align:center; padding: 50px;"><h1>Error</h1><p>No se encontraron los datos de la reserva en la URL. Asegúrate de que el formulario los esté enviando.</p></div>`;
+         return;
     }
+
+    // Mostramos un estado de "cargando" mientras se procesa
+    document.getElementById('resumen_pago').innerHTML = `<p class="lead text-center">Procesando tu tiquete...</p>`;
+    
+    // Llamamos a nuestro PHP para guardar la reserva y generar los datos del tiquete
+    fetch('php/guardar_reserva.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json()) // Esperamos una respuesta en formato JSON
+    .then(result => {
+        if (result.success) {
+            // SI TODO SALIÓ BIEN...
+            // Ocultamos el mensaje "Procesando..."
+            document.getElementById('resumen_pago').style.display = 'none';
+            // Llenamos toda la página con los datos que nos devolvió el servidor
+            rellenarDetalles(result.data);
+            
+            // Cambiamos el título principal para reflejar el éxito
+            document.querySelector('h1').innerHTML = `<i class="bi bi-patch-check-fill"></i> ¡Reserva Confirmada!`;
+        } else {
+            // Si el PHP devolvió un error (ej: la base de datos falló)
+            document.getElementById('resumen_pago').innerHTML = `<p class="text-center text-danger"><b>Error:</b> ${result.message}</p>`;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('resumen_pago').innerHTML = `<p class="text-center text-danger"><b>Error de conexión.</b> Revisa la consola (F12) para más detalles.</p>`;
+    });
 });
