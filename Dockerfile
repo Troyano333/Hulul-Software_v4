@@ -1,28 +1,31 @@
-# ---- Etapa 1: Instalar dependencias con Composer ----
-# Usamos una imagen oficial de Composer para instalar todo de forma limpia
+# ---- Etapa 1: Instalar dependencias con Composer (sin cambios) ----
 FROM composer:2 as builder
 
-# Creamos un directorio de trabajo
 WORKDIR /app
 
-# Copiamos los archivos de Composer primero para aprovechar el caché
 COPY composer.json composer.lock ./
-
-# Instalamos las dependencias
 RUN composer install --no-dev --optimize-autoloader
 
-# Copiamos el resto de los archivos del proyecto
 COPY . .
 
 # ---- Etapa 2: Preparar el servidor final ----
-# Usamos una imagen oficial de PHP con el servidor Apache
 FROM php:8.0-apache
 
-# Copiamos todos los archivos de nuestro proyecto (con la carpeta 'vendor' ya creada) desde la etapa anterior
-COPY --from=builder /app /var/www/html/
+# ==========================================================
+# ===== NUEVO BLOQUE CORREGIDO PARA INSTALAR GD =====
+# ==========================================================
+# Actualizamos los paquetes e instalamos las dependencias del sistema para la extensión GD
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+# Y LUEGO, configuramos e instalamos la extensión GD
+&& docker-php-ext-configure gd --with-freetype --with-jpeg \
+&& docker-php-ext-install -j$(nproc) gd
+# ==========================================================
 
-# Habilitamos la extensión GD para poder generar los códigos QR
-RUN docker-php-ext-install gd
+# Copiamos todos los archivos del proyecto desde la etapa anterior
+COPY --from=builder /app /var/www/html/
 
 # Damos los permisos correctos a la carpeta para que Apache pueda funcionar
 RUN chown -R www-data:www-data /var/www/html
