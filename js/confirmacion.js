@@ -3,13 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Función para llenar los datos en la página una vez que los recibimos del servidor
     function rellenarDetalles(datos) {
-        // ==========================================================
-        // ESTA ES LA PARTE CORREGIDA que usa datos.nombre y datos.apellido
-        // ==========================================================
         document.getElementById("nombre_reserva").textContent = datos.nombre;
         document.getElementById("apellido_reserva").textContent = datos.apellido;
-        
-        // Llenamos el resto de los datos
         document.getElementById("evento_reserva").textContent = datos.evento;
         document.getElementById("fecha_reserva").textContent = datos.fecha;
         document.getElementById("hora_reserva").textContent = datos.hora;
