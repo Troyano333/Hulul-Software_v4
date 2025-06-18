@@ -1,18 +1,21 @@
 <?php
-// Configuración de la base de datos
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "trabajando_db";
+// Establece la zona horaria correcta para todo el proyecto
+date_default_timezone_set('America/Bogota');
 
-// Crear la conexión a la base de datos
-$conexion = new mysqli($host, $username, $password, $database);
+// Lee las credenciales de forma segura desde las Variables de Entorno del servidor (Render)
+$host = getenv('DB_HOST');
+$usuario = getenv('DB_USER');
+$password = getenv('DB_PASS');
+$base_datos = getenv('DB_NAME');
 
-// Verificar la conexión
+// Crear conexión
+$conexion = new mysqli($host, $usuario, $password, $base_datos);
+
+// Verificar conexión
 if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+    die("Error de conexión con el servidor de la base de datos.");
 }
 
-// Configuración de la codificación de caracteres para evitar problemas con caracteres especiales
+// Configurar el juego de caracteres para evitar problemas con tildes y ñ
 $conexion->set_charset("utf8");
 ?>
